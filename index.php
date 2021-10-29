@@ -51,6 +51,10 @@
         function saven_clicked() {
             document.location.href = "07_button.php";
         }
+
+        function eight_clicked() {
+            document.location.href = "08_button.php";
+        }
     </script>
 
 
@@ -129,22 +133,7 @@
                             </div>
                             <div class="col">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-outline-info" type="button">Button</button><br>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="container-e">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="d-grid gap-2 col-6 mx-auto">
-                                        <button class="btn btn-outline-info" type="button">Button</button><br>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="d-grid gap-2 col-6 mx-auto">
-                                        <button class="btn btn-outline-info" type="button">Button</button><br>
-                                    </div>
+                                    <button class="btn btn-outline-info" type="button" onclick="eight_clicked()">students enrolled 1 and going up to the largest in each section</button><br>
                                 </div>
                             </div>
                         </div>
