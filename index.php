@@ -133,7 +133,7 @@
                             </div>
                             <div class="col">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-outline-info" type="button" onclick="eight_clicked()">students enrolled 1 and going up to the largest in each section</button><br>
+                                    <button class="btn btn-outline-info" type="button" onclick="eight_clicked()">students Enrollment</button><br>
                                 </div>
                             </div>
                         </div>

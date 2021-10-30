@@ -24,10 +24,9 @@
         table {
             position: absolute;
             z-index: 2;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
+            left: 45%;
+            top: 26%;
+            width: 50%;
             border-collapse: collapse;
             border-spacing: 0;
             box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
@@ -62,6 +61,9 @@
     </style>
 
     <title>TCMS</title>
+
+
+
 </head>
 
 <body>
@@ -82,7 +84,7 @@
     <br><br>
 
     <!-- add table -->
-    <table>
+    <table class="center">
         <tr>
             <th>ID</th>
             <th>Username</th>
@@ -119,7 +121,38 @@
 
         ?>
 
-    </table>
+    </table><br><br><br>
+
+    <!-- chats add  -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 10],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <div id="donutchart" class="chats" style="width: 900px; height: 500px;"></div>
 
 </body>
 
