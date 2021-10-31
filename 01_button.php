@@ -25,7 +25,7 @@
             position: absolute;
             z-index: 2;
             left: 45%;
-            top: 26%;
+            top: 30%;
             width: 50%;
             border-collapse: collapse;
             border-spacing: 0;
@@ -62,14 +62,12 @@
 
     <title>TCMS</title>
 
-
-
 </head>
 
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-light nav-bd fixed-top">
+    <nav class="navbar navbar-light nav-bd">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">TCMS</span>
         </div>
@@ -136,7 +134,7 @@
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
                 ['Work', 11],
-                ['Eat', 10],
+                ['Eat', 20],
                 ['Commute', 2],
                 ['Watch TV', 2],
                 ['Sleep', 7]
