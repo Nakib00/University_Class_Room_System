@@ -78,8 +78,8 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Work', 11],
-                ['Eat', 20],
+                ['Work', 20],
+                ['Eat', 12],
                 ['Commute', 2],
                 ['Watch TV', 2],
                 ['Sleep', 7]
