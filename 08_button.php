@@ -1,3 +1,6 @@
+<!-- Include navbar -->
+<?php include('navbar.php')?>
+
 <!doctype html>
 <html lang="en">
 
@@ -24,18 +27,8 @@
 </head>
 
 <body>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-light nav-bd">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">TCMS</span>
-        </div>
-    </nav>
-
-    <br><br><br>
     <!-- Using heading title -->
-    <div>
-        <H1 class="title">Show students enrolled 1 and going up to the largest in each section</H1>
+        <H1 class="title">Show students enrollment</H1>
     </div>
     <hr>
 

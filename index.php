@@ -1,3 +1,6 @@
+<!-- Include navbar -->
+<?php include('navbar.php')?>
+
 <!doctype html>
 <html lang="en">
 
@@ -62,13 +65,6 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-light nav-bd fixed-top">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">TCMS</span>
-        </div>
-    </nav>
-
 
     <br><br><br>
     <!-- Using heading title -->
