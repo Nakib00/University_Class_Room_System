@@ -27,7 +27,7 @@
         <hr><br><br>
 
         <!-- Include Button Component -->
-        <?php include('Button.php') ?>
+        <?php include('Button/Button.php') ?>
     </body>
 
     </html>
