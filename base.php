@@ -1,32 +1,33 @@
-<!-- Include navbar -->
-<?php include('navbar.php') ?>
 
-<!-- Include javascript file  -->
-<?php include('javascript.php') ?>
+    <!-- Include navbar -->
+    <?php include('Navbar/navbar.php') ?>
+
+    <!-- Include javascript file  -->
+    <?php include('JavaScript/javascript.php') ?>
 
 
-<!doctype html>
-<html lang="en">
+    <!doctype html>
+    <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Include CSS  -->
-    <?php include('CSS.php') ?>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include CSS  -->
+        <?php include('CSS/CSS.php') ?>
 
-    <title>TCMS</title>
-</head>
+        <title>TCMS</title>
+    </head>
 
-<body>
-    <!-- Using heading title -->
-    <div>
-        <H1 class="title">Welcome to the TCMS Dashboard</H1>
-    </div>
-    <hr><br><br>
+    <body>
+        <!-- Using heading title -->
+        <div>
+            <H1 class="title">Welcome to the TCMS Dashboard</H1>
+        </div>
+        <hr><br><br>
 
-    <!-- Include Button Component -->
-    <?php include('Button.php') ?>
-</body>
+        <!-- Include Button Component -->
+        <?php include('Button/Button.php') ?>
+    </body>
 
-</html>
+    </html>

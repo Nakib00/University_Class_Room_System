@@ -1,5 +1,5 @@
 <!-- Include navbar -->
-<?php include('navbar.php') ?>
+<?php include('Navbar/navbar.php') ?>
 
 <!doctype html>
 <html lang="en">
@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Include CSS  -->
-    <?php include('CSS.php') ?>
+    <?php include('CSS/CSS.php') ?>
     <!-- Include Table CSS -->
-    <?php include('Table_css.php') ?>
+    <?php include('CSS/Table_css.php') ?>
 
     <title>TCMS</title>
 </head>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>LOGIN</title>
+    <title>TCMS</title>
     <!-- Include navbar -->
     <?php include('login_css.php') ?>
 </head>
