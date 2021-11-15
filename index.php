@@ -1,26 +1,31 @@
+<!-- Include navbar -->
+<?php include('navbar.php') ?>
+
+<!-- Include javascript file  -->
+<?php include('JavaScript/javascript.php') ?>
+
+
 <!doctype html>
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include CSS  -->
+    <?php include('CSS/CSS.php') ?>
+
     <title>TCMS</title>
-    <!-- Include navbar -->
-    <?php include('CSS/login_css.php') ?>
 </head>
 
 <body>
-    <form action="base.php" method="post">
-        <h2>LOGIN</h2>
-        <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-        <label>User Name</label>
-        <input type="text" name="uname" placeholder="User Name"><br>
+    <!-- Using heading title -->
+    <div>
+        <H1 class="title">Welcome to the TCMS Dashboard</H1>
+    </div>
+    <hr><br><br>
 
-        <label>password</label>
-        <input type="password" name="password" placeholder="Password"><br>
-
-        <button type="submit">Login</button>
-    </form>
+    <!-- Include Button Component -->
 </body>
 
 </html>
