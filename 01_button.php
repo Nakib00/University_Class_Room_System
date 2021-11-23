@@ -35,14 +35,9 @@
         </tr>
 
         <?php
-        //make connection variable
-        $servername = "localhost";
-        $username = "root";
-        // $pas = "";
-        $database = "webapp";
 
-        // creat connection
-        $conn = mysqli_connect($servername, $username, "", $database);
+        //Connect with the database
+        include('DataBase/connection.php');
 
         if ($conn->connect_errno) {
             die("Error connecting" . $conn->connect_error);
