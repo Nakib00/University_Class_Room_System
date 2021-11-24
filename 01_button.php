@@ -32,6 +32,7 @@
             <th>ID</th>
             <th>Username</th>
             <th>password</th>
+            <th>City</th>
         </tr>
 
         <?php
@@ -43,13 +44,16 @@
             die("Error connecting" . $conn->connect_error);
         }
 
-        $sql = "SELECT id, username, password FROM users";
+        //USE the SQL query Here
+        $sql = "SELECT users.id, users.username, users.password,addrse.city
+        FROM users INNER JOIN addrse ON users.id=addrse.id;
+        ";
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td></tr>";
+                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>".$row['city'] ."</td></tr>";
             }
             echo "</table>";
         } else {
