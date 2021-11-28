@@ -3,8 +3,8 @@
     table {
         position: absolute;
         z-index: 2;
-        left: 45%;
-        top: 30%;
+        left: 30%;
+        top: 110%;
         width: 50%;
         border-collapse: collapse;
         border-spacing: 0;

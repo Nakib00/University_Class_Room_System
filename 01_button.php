@@ -53,7 +53,7 @@
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>".$row['city'] ."</td></tr>";
+                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
             }
             echo "</table>";
         } else {
