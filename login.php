@@ -85,12 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
-
-
-
             </ul>
         </div>
     </nav>
