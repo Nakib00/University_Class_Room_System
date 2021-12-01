@@ -37,9 +37,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <H1 class="title">Welcome to the TCMS Dashboard</H1>
     </div>
     <hr><br><br>
-
-    <!-- Include Button Component -->
-    <?php include('Button/Button.php') ?>
+    <div >
+        <!-- Include Button Component -->
+        <?php include('Button/Button.php') ?>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
