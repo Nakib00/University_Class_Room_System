@@ -3,7 +3,7 @@
     table {
         position: absolute;
         z-index: 2;
-        left: 30%;
+        left: 7%;
         top: 110%;
         width: 50%;
         border-collapse: collapse;
