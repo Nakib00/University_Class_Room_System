@@ -9,6 +9,9 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- Include CSS  -->
     <?php include('CSS/style.php') ?>
     <title>TCMS</title>
@@ -28,18 +31,20 @@
                 <i class='bx bx-search'></i>
             </div>
 
-            <!-- Admin profile -->
-            <div class="profile-details">
-                <img src="OIP.jpg" alt="">
-                <span class="admin_name">Admin</span>
-                <i class='bx bx-chevron-down'></i>
+            <div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="one_clicked()">Login</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="two_clicked()">Sign Up</button>
             </div>
         </nav>
 
         <!-- Titale of the page -->
         <div class="home-content">
-            <div class="titlel"><H2>Welcome to TCMS Dashboard</H2></div><br>
-            <div class="titlel"><H2>Please Login or Sign Up</H2></div><br>
+            <div class="titlel">
+                <H2>Welcome to TCMS Dashboard</H2>
+            </div><br>
+            <div class="titlel">
+                <H2>Please Login or Sign Up</H2>
+            </div><br>
         </div>
     </section>
 
@@ -52,6 +57,15 @@
                 sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
             } else
                 sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+
+        // Event for click button
+        function one_clicked() {
+            document.location.href = "login.php";
+        }
+
+        function two_clicked() {
+            document.location.href = "register.php";
         }
     </script>
 

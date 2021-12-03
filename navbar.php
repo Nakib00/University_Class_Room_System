@@ -65,12 +65,6 @@
                     <span class="links_name">Input Data</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>
             <li class="log_out">
                 <a href="logout.php">
                     <i class='bx bx-log-out'></i>
