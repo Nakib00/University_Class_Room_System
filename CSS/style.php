@@ -226,43 +226,6 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .overview-boxes .box-topic {
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  .home-content .box .number {
-    display: inline-block;
-    font-size: 35px;
-    margin-top: -6px;
-    font-weight: 500;
-  }
-
-  .home-content .box .indicator {
-    display: flex;
-    align-items: center;
-  }
-
-  .home-content .box .indicator i {
-    height: 20px;
-    width: 20px;
-    background: #8fdacb;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    margin-right: 5px;
-  }
-
-  .box .indicator i.down {
-    background: #e87d88;
-  }
-
-  .home-content .box .indicator .text {
-    font-size: 12px;
-  }
-
   .home-content .box .cart {
     display: inline-block;
     font-size: 32px;
@@ -328,22 +291,7 @@
     /* margin-bottom: 10px; */
   }
 
-  .sales-boxes .sales-details li.topic {
-    font-size: 20px;
-    font-weight: 500;
-  }
 
-  .sales-boxes .sales-details li {
-    list-style: none;
-    margin: 8px 0;
-  }
-
-  .sales-boxes .sales-details li a {
-    font-size: 18px;
-    color: #333;
-    font-size: 400;
-    text-decoration: none;
-  }
 
   .sales-boxes .box .button {
     width: 100%;
@@ -396,13 +344,6 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-  }
-
-  .sales-boxes .top-sales li .product,
-  .price {
-    font-size: 17px;
-    font-weight: 400;
-    color: #333;
   }
 
   /* Responsive Media Query */
