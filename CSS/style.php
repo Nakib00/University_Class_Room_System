@@ -429,4 +429,27 @@
       display: none;
     }
   }
+
+  .btn {
+    margin-top: 10px;
+    padding: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background:#66b0ff;
+    width: 160px;
+    text-align: center;
+    text-decoration: none;
+    text-transform:uppercase;
+    color: #fff;
+    border-radius:5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transform-duration:0.3s;
+  }
+  .btn:hover, .btn:focus, .btn:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0. 0.5);
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
 </style>
