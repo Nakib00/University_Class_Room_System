@@ -44,19 +44,19 @@
             <li>
                 <a href="06_button.php">
                     <i class='bx bx-usedr'></i>
-                    <span class="links_name">Revenue of IUB</span>
+                    <span class="links_name">students Enrollment</span>
                 </a>
             </li>
             <li>
                 <a href="07_button.php">
                     <i class='bx bx-messdage'></i>
-                    <span class="links_name">Revenue Engineering</span>
+                    <span class="links_name">Revenue of IUB</span>
                 </a>
             </li>
             <li>
                 <a href="08_button.php">
                     <i class='bx bx-hedart'></i>
-                    <span class="links_name">students Enrollment</span>
+                    <span class="links_name">Revenue Engineering</span>
                 </a>
             </li>
             <li>

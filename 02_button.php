@@ -40,7 +40,9 @@
 
         <!-- Titale of the page -->
         <div class="home-content">
-            <div class="titlel"><H2>Course Enrolment</H2></div>
+            <div class="titlel">
+                <H2>Course Enrolment</H2>
+            </div>
         </div>
 
         <!-- Table showing  -->
@@ -102,17 +104,8 @@
         </div>
     </section>
 
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".sidebarBtn");
-        sidebarBtn.onclick = function() {
-            sidebar.classList.toggle("active");
-            if (sidebar.classList.contains("active")) {
-                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-            } else
-                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
-    </script>
+    <!-- JavaScript add -->
+    <?php include('javascript/javascript.php') ?>
 
 </body>
 
