@@ -20,27 +20,14 @@
 
     <!-- Animation of the page -->
     <section class="home-section">
-        <nav>
-            <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Dashboard</span>
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
-
-            <!-- Admin profile -->
-            <div class="profile-details">
-                <img src="OIP.jpg" alt="">
-                <span class="admin_name">Admin</span>
-                <i class='bx bx-chevron-down'></i>
-            </div>
-        </nav>
+        <!-- Admin nav add  -->
+        <?php include('AdminNav.php') ?>
 
         <!-- Titale of the page -->
         <div class="home-content">
-            <div class="titlel"><H2>Revenue of Engineering School</H2></div>
+            <div class="titlel">
+                <H2>Revenue of Engineering School</H2>
+            </div>
         </div>
 
         <!-- Table showing  -->
