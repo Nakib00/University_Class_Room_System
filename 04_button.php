@@ -21,11 +21,13 @@
     <!-- Animation of the page -->
     <section class="home-section">
         <!-- Admin nav add  -->
-    <?php include('AdminNav.php') ?>
+        <?php include('AdminNav.php') ?>
 
         <!-- Titale of the page -->
         <div class="home-content">
-            <div class="titlel"><H2>IUB Available Requirement</H2></div>
+            <div class="titlel">
+                <H2>IUB Available Resources</H2>
+            </div>
         </div>
 
         <!-- Table showing  -->
@@ -38,12 +40,40 @@
                             <!-- add table -->
                             <table class="center">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Username</th>
-                                    <th>password</th>
-                                    <th>City</th>
+                                    <th>Class size</th>
+                                    <th>IUB resource</th>
+                                    <th>Capacity</th>
                                 </tr>
-
+                                <tfoot>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Capacity with 6 slot 2 days</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Capacity with 7 slot 2 days</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Considering 3.5 average course load (6 slot)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Considering 3.5 average course load (7 slot)</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Considering free % for 6 slots capacity</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Considering free % for 7 slots capacity</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
                                 <?php
 
                                 //Connect with the database
@@ -54,7 +84,7 @@
                                 }
 
                                 //USE the SQL query Here
-                                $sql = "SELECT users.id, users.username, users.password,addrse.city
+                                $sql = "SELECT users.id, users.username, users.password
         FROM users INNER JOIN addrse ON users.id=addrse.id;
         ";
 
@@ -62,17 +92,14 @@
 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
+                                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] .  "</td></tr>";
                                     }
-                                    echo "</table>";
                                 } else {
                                     echo "0 result";
                                 }
-
+                                echo "</table>";
                                 $conn->close();
-
                                 ?>
-
                             </table>
                         </div>
                     </div>

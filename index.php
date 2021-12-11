@@ -21,8 +21,21 @@
 
     <!-- Animation of the page -->
     <section class="home-section">
-        <!-- Admin nav add  -->
-        <?php include('AdminNav.php') ?>
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="one_clicked()">Login</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="two_clicked()">Sign Up</button>
+            </div>
+        </nav>
 
         <!-- Titale of the page -->
         <div class="home-content">

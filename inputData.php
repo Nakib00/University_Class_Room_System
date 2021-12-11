@@ -29,14 +29,14 @@
                     <H2>Import CSV File</H2>
                     <div class="panel-body">
                         <span id="message"></span>
-                        <form id="sample_form" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="InsartData.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Select CSV File</label>
-                                <input type="file" name="file" id="file" accept=".csv" />
+                                <input type="file" name="csv" id="csv" accept=".csv" />
                             </div>
                             <div class="form-group">
                                 <input type="hidden" name="hidden_field" value="1" />
-                                <input type="submit" name="import" id="import" class="btn" value="Import" />
+                                <input type="submit" name="form_submit" id="import" class="btn" value="import file" />
                             </div>
                         </form>
                     </div>
