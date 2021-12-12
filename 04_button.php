@@ -84,15 +84,14 @@
                                 }
 
                                 //USE the SQL query Here
-                                $sql = "SELECT users.id, users.username, users.password
-        FROM users INNER JOIN addrse ON users.id=addrse.id;
+                                $sql = "SELECT capacity,room_capacity,coffer_course_id FROM summer21;
         ";
 
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] .  "</td></tr>";
+                                        echo "<tr><td>" . $row['capacity'] . "</td><td>" . $row['room_capacity'] . "</td><td>" . $row['coffer_course_id'] .  "</td></tr>";
                                     }
                                 } else {
                                     echo "0 result";
