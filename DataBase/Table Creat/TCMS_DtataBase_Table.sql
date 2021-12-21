@@ -1,27 +1,27 @@
--- Student_T
-CREATE TABLE Student_T (nStudentID int(7) NOT NULL, nCostPerCredit int(5),
-    PRIMARY KEY (nStudentID));
+-- -- Student_T
+-- CREATE TABLE Student_T (nStudentID int(7) NOT NULL, nCostPerCredit int(5),
+--     PRIMARY KEY (nStudentID) auto_increment);
 
--- Registation_T
-CREATE TABLE Registation_T (nStudentId int(7),nSectionNumber int(1),
-    dRegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP);
+-- -- Registation_T
+-- CREATE TABLE Registation_T (nStudentId int(7),nSectionNumber int(1),
+--     dRegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP);
 
 -- Classroom_T
-CREATE TABLE Classroom_T (cClassroomNumbe varchar(5),nClassroomCapacity int(3));
+CREATE TABLE Classroom_T (classroomNumbe varchar(5),classroomCapacity int(3), PRIMARY KEY(classroomNumbe));
 
--- Section_T
-CREATE TABLE Section_T (nSectionId int(1),cSemesterName varchar(6),
-    cCourseId varchar(6),cClassroomNumber varchar(5));
+-- -- Section_T
+-- CREATE TABLE Section_T (number_of_Section int(2),SemesterName varchar(6),
+--     CourseId varchar(6),ClassroomNumber varchar(5));
 
 -- Semester_T
-CREATE TABLE Semester_T (cSemesterName varchar(6),nSemesterYea int(4));
+CREATE TABLE Semester_T (semester varchar(6),semesterYea int(4), PRIMARY KEY (semester),PRIMARY KEY (semesterYea));
 
--- Course_T
-CREATE TABLE Course_T (cDepartmentId varchar(3),cCourseId varchar(6),cCourseName varchar(30),
-    nNumberOfCredits int(3));
+-- Course_T cDepartmentId varchar(3)
+CREATE TABLE Course_T (courseId varchar(6),courseName varchar(30),
+    numberOfCredits int(3),number_of_Section int(2),enrollment int(3), PRIMARY KEY (courseId); 
 
--- Department_T
-CREATE TABLE Department_T (cDepartmentId varchar(3),cSchoolId int(5),cDepartmentName varchar(50));
+-- -- Department_T
+-- CREATE TABLE Department_T (cDepartmentId varchar(3),cSchoolId int(5));
 
 -- School_T
-CREATE TABLE School_T (cSchoolId varchar(5),cSchoolName varchar(50));
+CREATE TABLE School_T (school_title varchar(5),schoolName varchar(50), PRIMARY KEY (school_title));
