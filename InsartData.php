@@ -30,12 +30,11 @@ if(isset($_POST["Import"])){
             $result3 = mysqli_query($conn,$sqlInsert3);
             $result4 = mysqli_query($conn,$sqlInsert4);
             $result5 = mysqli_query($conn,$sqlInsert5);
-
-            if(!empty($result)){
-                echo "CSV Data Import into the database";
-            }else{
-                echo "Problem in Import CSV Data";
-            }
+        }
+        if(!empty($result)){
+            echo "CSV Data Import into the database";
+        }else{
+            echo "Problem in Import CSV Data";
         }
     }
 }
