@@ -7,7 +7,7 @@
 --     dRegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP);
 
 -- Classroom_T
-CREATE TABLE Classroom_T (classroomNumbe varchar(5) NOT NULL,classroomCapacity int(3), PRIMARY KEY(classroomNumbe));
+CREATE TABLE Classroom_T (classroomNumbe varchar(11) NOT NULL,classroomCapacity int(3), PRIMARY KEY(classroomNumbe));
 
 -- -- Section_T
 -- CREATE TABLE Section_T (number_of_Section int(2),SemesterName varchar(6),
