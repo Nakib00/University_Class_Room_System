@@ -10,17 +10,20 @@ if(isset($_POST["Import"])){
 
         while(($colum = fgetcsv($file,10000,",")) !== FALSE){
 
-            $sqlInsert = ("INSERT INTO Classroom_T(classroomNumbe,classroomCapacity)
+            $sqlInsert = ("INSERT INTO classroom_T(room_id,roomcapacity)
                 VALUE('$colum[7]','$colum[8]')");
 
-            $sqlInsert2 = ("INSERT INTO Semester_T(semester,semesterYea)
+            $sqlInsert2 = ("INSERT INTO section_T(courseid,school_title,section_number,semester_name,std_enrolled,semester_year,room_id)
+                VALUE('$colum[1]','$colum[0]','$colum[3]','$colum[12]','$colum[6]','$colum[9]','$colum[7]')");
+
+            $sqlInsert3 = ("INSERT INTO semester_T(semester_name,semester_year)
                 VALUE('$colum[12]','$colum[9]')");
 
-            $sqlInsert3 = ("INSERT INTO Course_T(courseId,courseName,numberOfCredits,number_of_Section,enrollment)
-                VALUE('$colum[1]','$colum[10]','$colum[4]','$colum[3]','$colum[6]')");
+            $sqlInsert4 = ("INSERT INTO course_T(courseid,Credit,school_title)
+                VALUE('$colum[1]','$colum[4]','$colum[0]')");
 
-            $sqlInsert4 = ("INSERT INTO School_T(school_title,schoolName)
-                VALUE('$colum[0]','$colum[2]')");
+            $sqlInsert4 = ("INSERT INTO school_T(school_title)
+                VALUE('$colum[0]')");
 
             $result = mysqli_query($conn,$sqlInsert);
             $result2 = mysqli_query($conn,$sqlInsert2);

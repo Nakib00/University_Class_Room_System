@@ -1,27 +1,24 @@
--- -- Student_T
--- CREATE TABLE Student_T (nStudentID int(7) NOT NULL, nCostPerCredit int(5),
---     PRIMARY KEY (nStudentID) auto_increment);
-
--- -- Registation_T
--- CREATE TABLE Registation_T (nStudentId int(7),nSectionNumber int(1),
---     dRegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP);
 
 -- Classroom_T
-CREATE TABLE Classroom_T (classroomNumbe varchar(11) NOT NULL,classroomCapacity int(3), PRIMARY KEY(classroomNumbe));
+CREATE TABLE classroom_T (room_id varchar(11) NOT NULL,roomcapacity int(3), PRIMARY KEY(room_id));
 
--- -- Section_T
--- CREATE TABLE Section_T (number_of_Section int(2),SemesterName varchar(6),
---     CourseId varchar(6),ClassroomNumber varchar(5));
+-- Section_T
+CREATE TABLE section_T (courseid varchar(10),school_title varchar(5),section_number int(2),semester_name varchar(6),
+    std_enrolled int(3),semester_year int(4),room_id varchar(15),
+                        PRIMARY KEY(courseid,school_title,section_number,semester_name,semester_year),
+                       	FOREIGN KEY(courseid) REFERENCES course_t(courseid),
+                       	FOREIGN KEY(school_title) REFERENCES school_t(school_title),
+                        FOREIGN KEY(semester_name,semester_year) REFERENCES semester_t(semester_name,semester_year),
+                       	FOREIGN KEY(room_id) REFERENCES classroom_t(room_id));
 
 -- Semester_T
-CREATE TABLE Semester_T (semester varchar(6) NOT NULL,semesterYea int(4) NOT NULL, PRIMARY KEY (semester,semesterYea));
+CREATE TABLE semester_T (semester_name varchar(6) NOT NULL,semester_year int(4) NOT NULL, PRIMARY KEY (semester_name,semester_year));
 
--- Course_T cDepartmentId varchar(3)
-CREATE TABLE Course_T (courseId varchar(6) NOT NULL,courseName varchar(30),
-    numberOfCredits int(3),number_of_Section int(2),enrollment int(3), PRIMARY KEY (courseId); 
+-- Course_T
+CREATE TABLE course_T (courseid varchar(10) NOT NULL,Credit DECIMAL(3,2),school_title varchar(5),
+                       PRIMARY KEY (courseid),
+                       FOREIGN KEY (school_title) REFERENCES school_t(school_title)); 
 
--- -- Department_T
--- CREATE TABLE Department_T (cDepartmentId varchar(3),cSchoolId int(5));
 
 -- School_T
-CREATE TABLE School_T (school_title varchar(5) NOT NULL,schoolName varchar(50), PRIMARY KEY (school_title));
+CREATE TABLE school_T (scrial_number int(3) NOT NULL, school_title varchar(5) NOT NULL, PRIMARY KEY (school_title,scrial_number));
