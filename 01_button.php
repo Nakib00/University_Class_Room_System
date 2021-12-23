@@ -55,6 +55,8 @@
                                     die("Error connecting" . $conn->connect_error);
                                 }
 
+                                
+
                                 //USE the SQL query Here
                                 $sql = "SELECT users.id, users.username, users.password,addrse.city
         FROM users INNER JOIN addrse ON users.id=addrse.id;

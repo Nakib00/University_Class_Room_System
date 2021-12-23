@@ -74,7 +74,7 @@
                                         <td></td>
                                     </tr>
                                 </tfoot>
-                                <?php
+                                <?php 
 
                                 //Connect with the database
                                 include('DataBase/connection.php');
@@ -83,6 +83,7 @@
                                     die("Error connecting" . $conn->connect_error);
                                 }
 
+                                // SELECT roomcapacity, COUNT(*) FROM `classroom_t` WHERE roomcapacity = '20';
                                 //USE the SQL query Here
                                 $sql = "SELECT capacity,room_capacity,coffer_course_id FROM summer21;
         ";

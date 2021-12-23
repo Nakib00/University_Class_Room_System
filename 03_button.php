@@ -40,12 +40,13 @@
                             <!-- add table -->
                             <table class="center">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Username</th>
-                                    <th>password</th>
-                                    <th>City</th>
+                                    <th>school</th>
+                                    <th>total enrolled</th>
+                                    <th>Avg Enroll</th>
+                                    <th>Avg Room</th>
+                                    <th>Difference</th>
+                                    <th>Unused %</th>
                                 </tr>
-
                                 <?php
 
                                 //Connect with the database
@@ -55,21 +56,38 @@
                                     die("Error connecting" . $conn->connect_error);
                                 }
 
+                                // Number of rows that have school name == "" AND semester = "" 
+                                // SELECT COUNT(*) AS row_need FROM `section_t` WHERE school_title='SBE' AND semester_name='spring';
+
+                                // sum of enrolled students
+                                // SELECT Sschool_title, SUM(std_enrolled) AS total_enrolled FROM `section_t` WHERE school_title='SBE' AND semester_name='spring';
+
+                                // sum of room capacity
+                                // SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='SBE' AND semester_name='spring';
+
+
+                                $school_name = array("SBE","SELS","SETS","SLASS","SPPH");
                                 //USE the SQL query Here
-                                $sql = "SELECT users.id, users.username, users.password,addrse.city
-        FROM users INNER JOIN addrse ON users.id=addrse.id;
-        ";
+                                for($i=0;$i<=4;$i++){
+                                    //sum of enrolled students
+                                    $sql="SELECT school_title, SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='spring'";
+                                    $result = $conn->query($sql);
+                                    //number of rows that have school
+                                    $sql2="SELECT COUNT(*) AS row_need FROM `section_t` WHERE school_title='$school_name[$i]' AND semester_name='spring';";
+                                    $result2 = $conn->query($sql2);
+                                    //sum of room capacity
+                                    $sql3="SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='$school_name[$i]' AND semester_name='spring';";
+                                    $result3=$conn->query($sql3);
 
-                                $result = $conn->query($sql);
-
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr><td>" . $row['school_title'] ."</td><td>". $row['total_enrolled'] . "</td></tr>";
+                                        }
+                                    } else {
+                                        echo "0 result";
                                     }
-                                    echo "</table>";
-                                } else {
-                                    echo "0 result";
                                 }
+                                echo "</table>";
 
                                 $conn->close();
 
@@ -78,12 +96,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
-
-                <!-- chart showing -->
-                <div class="top-sales box">
-                    <div class="title">chart</div>
-
                 </div>
             </div>
         </div>
