@@ -65,27 +65,41 @@
                                 // sum of room capacity
                                 // SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='SBE' AND semester_name='spring';
 
-
                                 $school_name = array("SBE","SELS","SETS","SLASS","SPPH");
-                                //USE the SQL query Here
+                                $total_enrolled=array();
+                                $row_need=array();
+                                $sum_room_capacity=array();
+
                                 for($i=0;$i<=4;$i++){
                                     //sum of enrolled students
-                                    $sql="SELECT school_title, SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='spring'";
+                                    $sql="SELECT  SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='spring';";
                                     $result = $conn->query($sql);
-                                    //number of rows that have school
-                                    $sql2="SELECT COUNT(*) AS row_need FROM `section_t` WHERE school_title='$school_name[$i]' AND semester_name='spring';";
-                                    $result2 = $conn->query($sql2);
-                                    //sum of room capacity
-                                    $sql3="SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='$school_name[$i]' AND semester_name='spring';";
-                                    $result3=$conn->query($sql3);
-
                                     if ($result->num_rows > 0) {
                                         while ($row = $result->fetch_assoc()) {
-                                            echo "<tr><td>" . $row['school_title'] ."</td><td>". $row['total_enrolled'] . "</td></tr>";
+                                            $total_enrolled[]=implode(" ",$row);
                                         }
-                                    } else {
-                                        echo "0 result";
                                     }
+
+                                    //number of rows that have school
+                                    $sql2="SELECT COUNT(*) FROM `section_t` WHERE school_title='$school_name[$i]' AND semester_name='spring';";
+                                    $result2 = $conn->query($sql2);
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result2->fetch_assoc()) {
+                                            $row_need[]=implode(" ",$row);
+                                        }
+                                    }
+                                    //sum of room capacity
+                                    $sql3="SELECT SUM(roomcapacity)  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='$school_name[$i]' AND semester_name='spring';";
+                                    $result3=$conn->query($sql3);
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result3->fetch_assoc()) {
+                                            $sum_room_capacity[]=implode(" ",$row);;
+                                        }
+                                    }
+                                }
+
+                                for($i=0;$i<=count($school_name);$i++) {
+                                    echo "<tr><td>" . $school_name[$i] ."</td><td>".  $total_enrolled[$i] ."</td><td>". $total_enrolled[$i]/$row_need[$i]."</td><td>"."</td></tr>";
                                 }
                                 echo "</table>";
 
