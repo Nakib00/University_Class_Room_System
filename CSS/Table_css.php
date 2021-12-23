@@ -39,7 +39,7 @@
     }
 
     .next{
-        top:750;
+        top:680;
         left:300;
     }
 </style>

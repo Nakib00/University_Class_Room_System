@@ -22,3 +22,7 @@ CREATE TABLE course_t (courseid varchar(10) NOT NULL,Credit DECIMAL(3,2),school_
 
 -- School_T
 CREATE TABLE school_t (scrial_number int(3) NOT NULL, school_title varchar(5) NOT NULL, PRIMARY KEY (school_title,scrial_number));
+
+-- Deferment
+CREATE TABLE department_t (department_id varchar(15) NOT NULL,school_title varchar(5),PRIMARY KEY(department_id),
+                        FOREIGN KEY (school_title) REFERENCES school_t(school_title));

@@ -8,16 +8,16 @@ if(isset($_POST["Import"])){
     if($_FILES["file"]["size"]>0){
         $file = fopen($fileName,"r");
 
-        while(($colum = fgetcsv($file,10000,",")) !== FALSE){
+        while(($colum = fgetcsv($file,50000,",")) !== FALSE){
 
             $sqlInsert = ("INSERT INTO classroom_t(room_id,roomcapacity)
-                VALUE('$colum[7]','$colum[8]')");
+                VALUE('$colum[7]','$colum[16]')");
 
             $sqlInsert2 = ("INSERT INTO section_t(courseid,school_title,section_number,semester_name,std_enrolled,semester_year,room_id)
-                VALUE('$colum[1]','$colum[0]','$colum[3]','$colum[12]','$colum[6]','$colum[9]','$colum[7]')");
+                VALUE('$colum[1]','$colum[0]','$colum[3]','$colum[19]','$colum[6]','$colum[18]','$colum[7]')");
 
             $sqlInsert3 = ("INSERT INTO semester_t(semester_name,semester_year)
-                VALUE('$colum[12]','$colum[9]')");
+                VALUE('$colum[19]','$colum[18]')");
 
             $sqlInsert4 = ("INSERT INTO course_t(courseid,Credit,school_title)
                 VALUE('$colum[1]','$colum[4]','$colum[0]')");
@@ -25,11 +25,15 @@ if(isset($_POST["Import"])){
             $sqlInsert5 = ("INSERT INTO school_t(school_title)
                 VALUE('$colum[0]')");
 
+            $sqlInsert6 =("INSERT INTO department_t(department_id,school_title)
+                VALUE('$colum[15]','$colum[0]')");
+
             $result = mysqli_query($conn,$sqlInsert);
             $result2 = mysqli_query($conn,$sqlInsert2);
             $result3 = mysqli_query($conn,$sqlInsert3);
             $result4 = mysqli_query($conn,$sqlInsert4);
             $result5 = mysqli_query($conn,$sqlInsert5);
+            $result6 =mysqli_query($conn,$sqlInsert6);
         }
         if(!empty($result)){
             echo "CSV Data Import into the database";

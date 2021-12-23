@@ -62,8 +62,7 @@
                                 // sum of room capacity
                                 // SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='SBE' AND semester_name='spring';
 
-                                $school_name=array("SBE","SELS","SETS","SLASS","SPPH");
-                                $total_enrolled=array();
+                                $school_name=array("SBE","SELS","SETS","SLASS");
                                 $row_need=array();
                                 $sum_room_capacity=array();
                                 $sum_total_enrolled=0;
@@ -72,7 +71,7 @@
                                 $sum_deef=0;
                                 $sum_unused=0;
 
-                                for($i=0;$i<=4;$i++){
+                                for($i=0;$i<count($school_name);$i++){
                                     //sum of enrolled students
                                     $sql="SELECT  SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='spring';";
                                     $result = $conn->query($sql);
@@ -127,7 +126,7 @@
                                 $sum_deef2=0;
                                 $sum_unused2=0;
 
-                                for($i=0;$i<=4;$i++){
+                                for($i=0;$i<count($school_name);$i++){
                                     //sum of enrolled students
                                     $sql="SELECT  SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='summer';";
                                     $results = $conn->query($sql);
