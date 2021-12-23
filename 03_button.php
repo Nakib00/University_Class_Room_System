@@ -99,7 +99,9 @@
                                 }
 
                                 for($i=0;$i<=count($school_name);$i++) {
-                                    echo "<tr><td>" . $school_name[$i] ."</td><td>".  $total_enrolled[$i] ."</td><td>". $total_enrolled[$i]/$row_need[$i]."</td><td>"."</td></tr>";
+                                    echo "<tr><td>" . $school_name[$i] ."</td><td>".  $total_enrolled[$i] ."</td><td>". 
+                                    $total_enrolled[$i]/$row_need[$i]."</td><td>".$sum_room_capacity[$i]/$row_need[$i]."</td><td>".
+                                    ($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i])."</td></tr>";
                                 }
                                 echo "</table>";
 
