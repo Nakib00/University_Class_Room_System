@@ -37,4 +37,9 @@
     tr:nth-child(even) {
         background-color: #eeeeee;
     }
+
+    .next{
+        top:750;
+        left:300;
+    }
 </style>
