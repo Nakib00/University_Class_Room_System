@@ -33,10 +33,7 @@
         <!-- Table showing  -->
         <div class="home-content">
             <div class="sales-boxes">
-                <div class="recent-sales box">
-                    <div class="title">Table</div>
-                    <div class="sales-details">
-                        <div class="">
+                        <div>
                             <!-- add table -->
                             <table class="center">
                                 <tr>
@@ -65,10 +62,15 @@
                                 // sum of room capacity
                                 // SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='SBE' AND semester_name='spring';
 
-                                $school_name = array("SBE","SELS","SETS","SLASS","SPPH");
+                                $school_name=array("SBE","SELS","SETS","SLASS","SPPH");
                                 $total_enrolled=array();
                                 $row_need=array();
                                 $sum_room_capacity=array();
+                                $sum_total_enrolled=0;
+                                $sum_avg_enrolled=0;
+                                $sum_avg_room=0;
+                                $sum_deef=0;
+                                $sum_unused=0;
 
                                 for($i=0;$i<=4;$i++){
                                     //sum of enrolled students
@@ -98,11 +100,23 @@
                                     }
                                 }
 
-                                for($i=0;$i<=count($school_name);$i++) {
-                                    echo "<tr><td>" . $school_name[$i] ."</td><td>".  $total_enrolled[$i] ."</td><td>". 
+                                for($i=0;$i<count($school_name);$i++) {
+                                    echo "<tr><td>".$school_name[$i]."</td><td>".$total_enrolled[$i]."</td><td>". 
                                     $total_enrolled[$i]/$row_need[$i]."</td><td>".$sum_room_capacity[$i]/$row_need[$i]."</td><td>".
-                                    ($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i])."</td></tr>";
+                                    ($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i]).
+                                    "</td><td>".((($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i]))/($sum_room_capacity[$i]/$row_need[$i])*100)."</td></tr>";
                                 }
+
+                                for($i=0;$i<count($row_need);$i++){
+                                    $sum_total_enrolled=($sum_total_enrolled+$total_enrolled[$i]);
+                                    $sum_avg_enrolled=($sum_avg_enrolled+($total_enrolled[$i]/$row_need[$i]));
+                                    $sum_avg_room=($sum_avg_room+($sum_room_capacity[$i]/$row_need[$i]));
+                                    $sum_deef=($sum_deef+($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i]));
+                                    $sum_unused=($sum_unused+((($sum_room_capacity[$i]/$row_need[$i])-($total_enrolled[$i]/$row_need[$i]))/($sum_room_capacity[$i]/$row_need[$i])*100));
+                                }
+                                echo"<tr><td>".'SPRING'."</td><td>".$sum_total_enrolled."</td><td>".$sum_avg_enrolled."</td><td>".
+                                $sum_avg_room."</td><td>".$sum_deef."</td><td>".$sum_unused."</td><td></tr>";
+
                                 echo "</table>";
 
                                 $conn->close();
