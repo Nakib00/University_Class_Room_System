@@ -35,14 +35,21 @@
             <!-- add table -->
             <table class="center">
                 <tr>
-                    <th></th>
-                    <th>SPRING</th>
-                    <th>SUMMER</th>
+                    <th colspan="6">SPRING</th>
+                    <th colspan="6">SUMMER</th>
                 </tr>
                 <tr>
                     <th>Enrolment</th>
                     <th>SBE</th>
-                    <th></th>
+                    <th>SELS</th>
+                    <th>SETS</th>
+                    <th>SLASS</th>
+                    <th>Total</th>
+                    <th>SBE</th>
+                    <th>SELS</th>
+                    <th>SETS</th>
+                    <th>SLASS</th>
+                    <th>Total</th>
                 </tr>
 
                 <?php
@@ -54,22 +61,57 @@
                     die("Error connecting" . $conn->connect_error);
                 }
 
+
                 //USE the SQL query Here
-                $sql = "SELECT users.id, users.username, users.password,addrse.city
-        FROM users INNER JOIN addrse ON users.id=addrse.id;
-        ";
+                // 1st sql
+                // SELECT COUNT(*) FROM section_t WHERE school_title='SBE' 
+                // AND semester_name='spring' AND semester_year='2010' AND std_enrolled BETWEEN 0 AND 10;
 
-                $result = $conn->query($sql);
+                // 2nd sql
+                // SELECT COUNT(*) FROM section_t WHERE school_title='SBE' AND semester_name='spring' AND semester_year='2010' AND std_enrolled>=60;
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
+                $school_name = array('SBE', 'SELS', 'SETS', 'SLASS');
+                $enrolled_size1 = array(0,11,21,31,36,41,51,56);
+                $enrolled_size2 = array(10,20,30,35,40,50,55,60);
+                $enrolled_spring= array();
+                $enrolled_summer= array();
+                $total_spring=0;
+                $temp=array();
+                $total_summer=0;
+                
+                for($i=0;$i<count($enrolled_size1); $i++){
+                    //SPRING
+                    for($j=0;$j<count($school_name);$j++){
+                        $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[3]' AND semester_name='spring' AND semester_year='2010' AND
+                            std_enrolled BETWEEN $enrolled_size1[0] AND $enrolled_size2[0];";
+                        $results = $conn->query($sql);
+                        if ($results->num_rows > 0) {
+                            while ($row = $results->fetch_assoc()) {
+                                $enrolled_spring[] = implode(" ", $row);
+                            }
+                        }
+                        for($k=0;$k<count($enrolled_spring);$k++){
+                            $total_spring = $total_spring+$enrolled_spring[$k];
+                        }
+                        for($o=1;$o<count($enrolled_spring);$o++){
+                            echo "<td>"."</td><td>".$enrolled_spring[$o]."</td>";
+                        }
                     }
-                    echo "</table>";
-                } else {
-                    echo "0 result";
+
+                    // //SUMMER
+                    // for($j=0;$j<count($school_name);$j++){
+                    //     $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$j]' AND semester_name='summer' AND semester_year='2010' AND
+                    //         std_enrolled BETWEEN '$enrolled_size1[$i]' AND '$enrolled_size2[$i]';";
+                    //     $results2 = $conn->query($sql2);
+                    //     if ($results->num_rows > 0) {
+                    //         while ($row = $results2->fetch_assoc()) {
+                    //             $enrolled_summer[] = implode(" ", $row);
+                    //         }
+                    //     }
+                    // }
                 }
 
+                echo "</table>";
                 $conn->close();
 
                 ?>

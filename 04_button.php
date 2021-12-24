@@ -49,19 +49,48 @@
                 }
 
 
+                $class_size=array(15,20,25,30,35,40,45,50,60,65);
+                $capacity=array();
+                $recourses=array();
+                $sum_recourses=0;
+                $sum_capacity=0;
                 //USE the SQL query Here
-                $sql = "SELECT capacity,room_capacity,coffer_course_id FROM summer21;
-        ";
+                // SELECT roomcapacity, COUNT(*) FROM classroom_t AS c, section_t AS s WHERE c.room_id=s.room_id AND
+                //  semester_name='spring' AND semester_year='2010' AND roomcapacity=15;
 
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row['capacity'] . "</td><td>" . $row['room_capacity'] . "</td><td>" . $row['coffer_course_id'] .  "</td></tr>";
+                for($i = 0; $i < count($class_size); $i++){
+                    $sql="SELECT COUNT(*) FROM classroom_t AS c, section_t AS s WHERE c.room_id=s.room_id AND
+                        semester_name='spring' AND semester_year='2010' AND roomcapacity= $class_size[$i];";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $recourses[] = implode(" ", $row);
+                        }
                     }
-                } else {
-                    echo "0 result";
                 }
+
+                for($j=0;$j<count($class_size);$j++){
+                    $capacity[$j]=($class_size[$j]*$recourses[$j]);
+                }
+
+                for($p=0;$p<count($class_size);$p++){
+                    $sum_recourses=($sum_recourses+$recourses[$p]);
+                    $sum_capacity=($sum_capacity+$capacity[$p]);
+                }
+
+                for($k=0;$k<count($class_size);$k++){
+                    echo"<tr><td>".$class_size[$k]."</td><td>".$recourses[$k]."</td><td>".$capacity[$k]."</td></tr>";
+                }
+
+                $six_slot= $sum_capacity*12;
+                $seven_slot=$sum_capacity*14;
+                echo"<tr><td>".'Total Capacity with 6 slot 2 days'."</td><td>" ."</td><td>" .$six_slot."</td></tr>";
+                echo"<tr><td>".'Total Capacity with 7 slot 2 days'."</td><td>" ."</td><td>" .$seven_slot."</td></tr>";
+                echo"<tr><td>".'Considering 3.5 average course load (6 slot)'."</td><td>" ."</td><td>" ."</td></tr>";
+                echo"<tr><td>".'Considering 3.5 average course load (7 slot)'."</td><td>" ."</td><td>" ."</td></tr>";
+                echo"<tr><td>".'Considering free % for 6 slots capacity'."</td><td>" ."</td><td>" ."</td></tr>";
+                echo"<tr><td>".'Considering free % for 7 slots capacity'."</td><td>" ."</td><td>" ."</td></tr>";
+
                 echo "</table>";
                 $conn->close();
                 ?>

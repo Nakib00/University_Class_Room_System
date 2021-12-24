@@ -50,7 +50,13 @@
                     die("Error connecting" . $conn->connect_error);
                 }
 
+                //USE the SQL query Here
+                $cls_size1 = array(0, 11, 21, 31, 36, 41, 51, 56);
+                $cls_size2 = array(10, 20, 30, 35, 40, 50, 55, 60);
 
+                $section = array();
+                $class_room_6 = 0;
+                $class_room_7 = 0;
 
                 //USE the SQL query Here
                 $sql = "SELECT users.id, users.username, users.password,addrse.city

@@ -26,7 +26,7 @@
         <!-- Titale of the page -->
         <div class="home-content">
             <div class="titlel">
-                <H2>Usage of Resources</H2>
+                <H2>Usage of Resources</H2> 
             </div>
         </div>
 
