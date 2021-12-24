@@ -41,7 +41,7 @@
                         <th>Avg Enroll</th>
                         <th>Avg Room</th>
                         <th>Difference</th>
-                        <th>Unused %</th>
+                        <th >Unused %</th>
                         <th></th>
                     </tr>
                     <?php

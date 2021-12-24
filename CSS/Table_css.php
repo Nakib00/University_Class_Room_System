@@ -42,4 +42,12 @@
         top:680;
         left:22%;
     }
+    .button4{
+        width: 80%;
+        left:10%;
+    }
+    .button_1{
+        width: 20%;
+        left:20%;
+    }
 </style>
