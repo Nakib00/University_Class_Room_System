@@ -38,16 +38,28 @@
         background-color: #eeeeee;
     }
 
-    .button_3{
-        top:680;
-        left:22%;
+    .button_3 {
+        top: 680;
+        left: 22%;
     }
-    .button4{
+
+    .button4 {
         width: 80%;
-        left:10%;
+        left: 10%;
     }
-    .button_1{
+
+    .button_1 {
         width: 20%;
-        left:20%;
+        left: 20%;
+    }
+
+    .button21 {
+        width: 20%;
+        left: 20%;
+    }
+
+    .button1 {
+        width: 20%;
+        left: 20%;
     }
 </style>
