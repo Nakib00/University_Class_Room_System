@@ -40,10 +40,14 @@
                             <!-- add table -->
                             <table class="center">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Username</th>
-                                    <th>password</th>
-                                    <th>City</th>
+                                    <th></th>
+                                    <th>SPRING</th>
+                                    <th>SUMMER</th>
+                                </tr>
+                                <tr>
+                                    <th>Enrolment</th>
+                                    <th>SBE</th>
+                                    <th></th>
                                 </tr>
 
                                 <?php

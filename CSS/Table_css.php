@@ -38,8 +38,8 @@
         background-color: #eeeeee;
     }
 
-    .next{
+    .button_3{
         top:680;
-        left:300;
+        left:200;
     }
 </style>

@@ -43,6 +43,7 @@
                                     <th>Avg Room</th>
                                     <th>Difference</th>
                                     <th>Unused %</th>
+                                    <th></th>
                                 </tr>
                                 <?php
 
@@ -161,6 +162,7 @@
                                     "</td><td>".((($sum_room_capacity2[$i]/$row_need2[$i])-($total_enrolled2[$i]/$row_need2[$i]))/($sum_room_capacity2[$i]/$row_need2[$i])*100)."</td></tr>";
                                 }
 
+                                // sum of all spring and summer
                                 for($i=0;$i<count($row_need2);$i++){
                                     $sum_total_enrolled2=($sum_total_enrolled2+$total_enrolled2[$i]);
                                     $sum_avg_enrolled2=($sum_avg_enrolled2+($total_enrolled2[$i]/$row_need2[$i]));
@@ -178,11 +180,13 @@
 
                             </table>
 
-                            <table class="next">
+                            <table class="button_3">
                             <tr>
                                     <th></th>
                                     <th>SPRING</th>
+                                    <th></th>
                                     <th>SUMMER</th>
+                                    <th></th>
                                 </tr>
                                 <?php
                                 echo "<tr><td>".'<b>Average of ROOM CAPACITY</b>'."</td><td>".$sum_avg_room."</td><td>"."</td><td>".$sum_avg_room2."</td><td></tr>";
