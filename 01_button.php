@@ -93,7 +93,7 @@
 
                 for ($i = 0; $i < count($section_spring); $i++) {
                     $class_room_6_spring[$i] = ($section_spring[$i] / 12);
-                    $class_room_7_spring[$i] = ($section_spring[$i] / 12);
+                    $class_room_7_spring[$i] = ($section_spring[$i] / 14);
                 }
 
                 //For summer
@@ -111,16 +111,16 @@
 
                 for ($i = 0; $i < count($section_summer); $i++) {
                     $class_room_6_summe[$i] = ($section_summer[$i] / 12);
-                    $class_room_7_summe[$i] = ($section_summer[$i] / 12);
+                    $class_room_7_summe[$i] = ($section_summer[$i] / 14);
                 }
 
                 for ($i = 0; $i < count($section_summer); $i++) {
                     $section_spring_sum = ($section_spring_sum + $section_spring[$i]);
                     $section_summer_sum = ($section_summer_sum + $section_summer[$i]);
-                    $class_room_6_spring_sum = ($class_room_6_spring_sum + $section_spring[$i]);
-                    $class_room_7_spring_sum = ($class_room_7_spring_sum + $section_spring[$i]);
-                    $class_room_6_summer_sum = ($class_room_6_summer_sum + $section_summer[$i]);
-                    $class_room_7_summer_sum = ($class_room_7_summer_sum + $section_summer[$i]);
+                    $class_room_6_spring_sum = ($class_room_6_spring_sum + $class_room_6_spring[$i]);
+                    $class_room_7_spring_sum = ($class_room_7_spring_sum + $class_room_7_spring[$i]);
+                    $class_room_6_summer_sum = ($class_room_6_summer_sum + $class_room_6_summe[$i]);
+                    $class_room_7_summer_sum = ($class_room_7_summer_sum + $class_room_7_summe[$i]);
                 }
 
                 for ($i = 0; $i < count($section_summer); $i++) {
@@ -129,9 +129,9 @@
                         "</td><td>" . round($class_room_7_summe[$i], 2) . "</td></tr>";
                 }
 
-                echo "<tr><td>" . '<b>TOTAL</b>' . "</td><td>" . $section_spring_sum . "</td><td>" . $class_room_6_spring_sum . "</td><td>" .
-                    $class_room_7_spring_sum . "</td><td>" . $section_summer_sum . "</td><td>" . $class_room_6_summer_sum . "</td><td>" .
-                    $class_room_7_summer_sum . "</td></tr>";
+                echo "<tr><td>" . '<b>TOTAL</b>' . "</td><td>" . $section_spring_sum . "</td><td>" . round($class_room_6_spring_sum,2) . "</td><td>" .
+                    round($class_room_7_spring_sum,2) . "</td><td>" . round($section_summer_sum,2) . "</td><td>" . round($class_room_6_summer_sum,2) . "</td><td>" .
+                    round($class_room_7_summer_sum,2) . "</td></tr>";
 
                 $conn->close();
                 ?>
