@@ -137,7 +137,21 @@
                     <th>SETS</th>
                     <th>SLASS</th>
                     <th>Total</th>
+                    <th></th>
                 </tr>
+                <?php
+                $e = 0;
+                for ($i = 0; $i < count($enrolled_size1); $i++) {
+                    echo "<tr><td>" . "$enrolled_size1[$i]" . "-" . "$enrolled_size2[$i]" . "</td>";
+                    for ($j = $e; $j < ($e + 4); $j++) {
+                        echo "<td>" . $enrolled_summer[$j] . "</td>";
+                    }
+                    $e = $e + 4;
+
+                    echo "<td>" . $total_summer[$i] . "</td></tr>";
+                }
+                echo "</table>";
+                ?>
             </table>
         </div>
     </section>
