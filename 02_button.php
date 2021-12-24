@@ -71,18 +71,17 @@
                 // SELECT COUNT(*) FROM section_t WHERE school_title='SBE' AND semester_name='spring' AND semester_year='2010' AND std_enrolled>=60;
 
                 $school_name = array('SBE', 'SELS', 'SETS', 'SLASS');
-                $enrolled_size1 = array(0,11,21,31,36,41,51,56);
-                $enrolled_size2 = array(10,20,30,35,40,50,55,60);
-                $enrolled_spring= array();
-                $enrolled_summer= array();
-                $total_spring=0;
-                $temp=array();
-                $total_summer=0;
-                
-                for($i=0;$i<count($enrolled_size1); $i++){
+                $enrolled_size1 = array(0, 11, 21, 31, 36, 41, 51, 56);
+                $enrolled_size2 = array(10, 20, 30, 35, 40, 50, 55, 60);
+                $enrolled_spring = array();
+                $enrolled_summer = array();
+                $total_spring = array();
+                $total_summer = array();
+
+                for ($i = 0; $i < count($enrolled_size1); $i++) {
                     //SPRING
-                    for($j=0;$j<count($school_name);$j++){
-                        $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[3]' AND semester_name='spring' AND semester_year='2010' AND
+                    for ($j = 0; $j < count($school_name); $j++) {
+                        $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[0]' AND semester_name='spring' AND semester_year='2010' AND
                             std_enrolled BETWEEN $enrolled_size1[0] AND $enrolled_size2[0];";
                         $results = $conn->query($sql);
                         if ($results->num_rows > 0) {
@@ -90,25 +89,34 @@
                                 $enrolled_spring[] = implode(" ", $row);
                             }
                         }
-                        for($k=0;$k<count($enrolled_spring);$k++){
-                            $total_spring = $total_spring+$enrolled_spring[$k];
-                        }
-                        for($o=1;$o<count($enrolled_spring);$o++){
-                            echo "<td>"."</td><td>".$enrolled_spring[$o]."</td>";
+                        for ($k = 0; $k < count($enrolled_spring); $k++) {
+                            $total_spring[$k] = $total_spring[$k] + $enrolled_spring[$k];
                         }
                     }
 
-                    // //SUMMER
-                    // for($j=0;$j<count($school_name);$j++){
-                    //     $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$j]' AND semester_name='summer' AND semester_year='2010' AND
-                    //         std_enrolled BETWEEN '$enrolled_size1[$i]' AND '$enrolled_size2[$i]';";
-                    //     $results2 = $conn->query($sql2);
-                    //     if ($results->num_rows > 0) {
-                    //         while ($row = $results2->fetch_assoc()) {
-                    //             $enrolled_summer[] = implode(" ", $row);
-                    //         }
-                    //     }
-                    // }
+                    //SUMMER
+                    for($l=0;$l<count($school_name);$l++){
+                        $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$l]' AND semester_name='summer' AND semester_year='2010' AND
+                            std_enrolled BETWEEN '$enrolled_size1[$l]' AND '$enrolled_size2[$l]';";
+                        $results2 = $conn->query($sql2);
+                        if ($results->num_rows > 0) {
+                            while ($row = $results2->fetch_assoc()) {
+                                $enrolled_summer[] = implode(" ", $row);
+                            }
+                        }
+                        for ($q = 0; $q < count($enrolled_summer); $q++) {
+                            $total_summer[$q] = $total_summer[$q] + $enrolled_summer[$q];
+                        }
+                    }
+                }
+
+                // Print the table results
+                for($i = 0; $i <$enrolled_spring; $i++) {
+                    echo "<tr><td>" ."$enrolled_size1[$i]"."-"."$enrolled_size2[$i]"."</td><td>";
+                    for($j=0;$j<$enrolled_spring; $j++){
+                        echo "<td>" .$enrolled_spring[$i]."</td>";
+                    }
+                    echo "<td>".$total_spring[$i]."</td></tr>";
                 }
 
                 echo "</table>";
