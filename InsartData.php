@@ -8,7 +8,7 @@ if(isset($_POST["Import"])){
     if($_FILES["file"]["size"]>0){
         $file = fopen($fileName,"r");
 
-        while(($colum = fgetcsv($file,50000,",")) !== FALSE){
+        while(($colum = fgetcsv($file,30000,",")) !== FALSE){
 
             $sqlInsert = ("INSERT INTO classroom_t(room_id,roomcapacity)
                 VALUE('$colum[7]','$colum[16]')");
