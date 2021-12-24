@@ -11,7 +11,7 @@ if(isset($_POST["Import"])){
         while(($colum = fgetcsv($file,30000,",")) !== FALSE){
 
             $sqlInsert = ("INSERT INTO classroom_t(room_id,roomcapacity)
-                VALUE('$colum[7]','$colum[16]')");
+                VALUE('$colum[7]','$colum[8]')");
 
             $sqlInsert2 = ("INSERT INTO section_t(courseid,school_title,section_number,semester_name,std_enrolled,semester_year,room_id)
                 VALUE('$colum[1]','$colum[0]','$colum[3]','$colum[19]','$colum[6]','$colum[18]','$colum[7]')");

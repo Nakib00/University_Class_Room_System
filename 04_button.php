@@ -27,84 +27,45 @@
         <div class="home-content">
             <div class="titlel">
                 <H2>IUB Available Resources</H2>
-            </div>
+            </div> 
         </div>
 
         <!-- Table showing  -->
         <div class="home-content">
-            <div class="sales-boxes">
-                <div class="recent-sales box">
-                    <div class="title">Table</div>
-                    <div class="sales-details">
-                        <div class="">
-                            <!-- add table -->
-                            <table class="center">
-                                <tr>
-                                    <th>Class size</th>
-                                    <th>IUB resource</th>
-                                    <th>Capacity</th>
-                                </tr>
-                                <tfoot>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Capacity with 6 slot 2 days</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Capacity with 7 slot 2 days</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Considering 3.5 average course load (6 slot)</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Considering 3.5 average course load (7 slot)</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Considering free % for 6 slots capacity</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Considering free % for 7 slots capacity</td>
-                                        <td></td>
-                                    </tr>
-                                </tfoot>
-                                <?php 
+            <!-- add table -->
+            <table class="center">
+                <tr>
+                    <th>Class size</th>
+                    <th>IUB resource</th>
+                    <th>Capacity</th>
+                </tr>
+                <?php
 
-                                //Connect with the database
-                                include('DataBase/connection.php');
+                //Connect with the database
+                include('DataBase/connection.php');
 
-                                if ($conn->connect_errno) {
-                                    die("Error connecting" . $conn->connect_error);
-                                }
+                if ($conn->connect_errno) {
+                    die("Error connecting" . $conn->connect_error);
+                }
 
-                                // SELECT roomcapacity, COUNT(*) FROM `classroom_t` WHERE roomcapacity = '20';
-                                //USE the SQL query Here
-                                $sql = "SELECT capacity,room_capacity,coffer_course_id FROM summer21;
+
+                //USE the SQL query Here
+                $sql = "SELECT capacity,room_capacity,coffer_course_id FROM summer21;
         ";
 
-                                $result = $conn->query($sql);
+                $result = $conn->query($sql);
 
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr><td>" . $row['capacity'] . "</td><td>" . $row['room_capacity'] . "</td><td>" . $row['coffer_course_id'] .  "</td></tr>";
-                                    }
-                                } else {
-                                    echo "0 result";
-                                }
-                                echo "</table>";
-                                $conn->close();
-                                ?>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr><td>" . $row['capacity'] . "</td><td>" . $row['room_capacity'] . "</td><td>" . $row['coffer_course_id'] .  "</td></tr>";
+                    }
+                } else {
+                    echo "0 result";
+                }
+                echo "</table>";
+                $conn->close();
+                ?>
+            </table>
         </div>
     </section>
 
