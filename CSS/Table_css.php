@@ -55,7 +55,7 @@
 
     .button21 {
         width: 20%;
-        left: 20%;
+        left: 5%;
     }
 
     .button1 {
