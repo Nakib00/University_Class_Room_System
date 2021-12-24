@@ -3,7 +3,7 @@
     table {
         position: absolute;
         z-index: 2;
-        left: 5%;
+        left: 20%;
         top: 20%;
         width: 50%;
         border-collapse: collapse;
@@ -40,6 +40,6 @@
 
     .button_3{
         top:680;
-        left:200;
+        left:22%;
     }
 </style>
