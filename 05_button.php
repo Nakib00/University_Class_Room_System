@@ -26,7 +26,7 @@
         <!-- Titale of the page -->
         <div class="home-content">
             <div class="titlel">
-                <H2>Availability Course Offering</H2>
+                <H2>Availability and course offering comparison</H2>
             </div>
         </div>
 
