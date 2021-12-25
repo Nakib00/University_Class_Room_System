@@ -19,5 +19,5 @@ SCOPE OF THE PROJECT
 
 In the existing system all the data that is required for making meaningful analysis of concerns such as Resource Usage or Classroom Requirements among other topics for each semester is done manually. For each type of data employees have to tediously reach out to different offices and departments and then use those data to make necessary calculations by hand.All this inconvenience can be avoided by implementing a centralized database from which all the required data can be downloaded at once in the form of tally sheets. The tally sheets can then be uploaded into a system that can extract all the data from it and make required calculations using those data to automatically generate meaningful tables and graphs as per user requirements.
 
-EXISTING BUSINESS SYSTEM (WITH RICH PICTURE)
+BUSINESS SYSTEM (WITH RICH PICTURE)
 
