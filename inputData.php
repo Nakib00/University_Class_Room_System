@@ -25,36 +25,38 @@
     <section class="home-section">
         <!-- Admin nav add  -->
         <?php include('AdminNav.php') ?>
+        <!-- Titale of the page -->
+        <div class="home-content">
+            <div class="titlel">
+                <H2>Import CSV</H2>
+            </div>
+        </div>
 
         <!-- Table showing  -->
         <div class="home-content">
-            <div class="sales-boxes">
-                <div class="recent-sales box">
-                    <H2>Import CSV File</H2>
-                    <div class="panel-body">
-                        <span id="message"></span>
-                        <form class="form-horizontal" action="InsartData.php" method="post" name="upload_excel" enctype="multipart/form-data">
-                            <fieldset>
-                                <!-- File Button -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="filebutton">Select File</label>
-                                    <div class="col-md-4">
-                                        <input type="file" name="file" id="file" class="input-large">
-                                    </div>
-                                </div>
+            <div class="panel-body">
+                <span id="message"></span>
+                <form class="form-horizontal" action="InsartData.php" method="post" name="upload_excel" enctype="multipart/form-data">
+                    <fieldset>
+                        <!-- File Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="filebutton">Select File</label>
+                            <div class="col-md-4">
+                                <input type="file" name="file" id="file" class="input-large">
+                            </div>
+                        </div>
 
-                                <!-- Button -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="singlebutton">Import data</label>
-                                    <div class="col-md-4">
-                                        <button type="Import" id="Import" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Import</button>
-                                    </div>
-                                </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="singlebutton">Import data</label>
+                            <div class="col-md-4">
+                                <button type="Import" id="Import" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Import</button>
+                            </div>
+                        </div>
 
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
+                    </fieldset>
+                </form>
+
             </div>
         </div>
     </section>
