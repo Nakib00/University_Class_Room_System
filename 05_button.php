@@ -9,6 +9,8 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FOR Chart -->
+
     <!-- Include CSS  -->
     <?php include('CSS/style.php') ?>
     <!-- Include Table CSS -->
@@ -41,6 +43,11 @@
                     <a href="05_button2.php">spring(2010)-summer(2010)</a>
                     <a href="05_button3.php">spring(2011)-summer(2011)</a>
                 </div>
+            </div>
+
+            <!-- Chart data Add  -->
+            <div class="chart_5">
+                
             </div>
 
             <!-- Table showing  -->
