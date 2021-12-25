@@ -30,6 +30,22 @@
             </div>
         </div>
 
+        <div class="dropdown">
+            <label for="cars">SELECT SEMESTER 1st:</label>
+
+            <select name="cars" id="cars">
+                <option value="volvo">Spring </option>
+                <option value="saab">Summer</option>
+                <option value="mercedes">Autumn</option>
+            </select>
+            <div class="dropdown">
+            <label for="cars">SELECT SEMESTER 2nd:</label>
+
+            <select name="cars" id="cars">
+                <option value="volvo">Spring </option>
+                <option value="saab">Summer</option>
+                <option value="mercedes">Autumn</option>
+            </select>
         <!-- Table showing  -->
         <div class="home-content">
             <!-- add table -->

@@ -35,10 +35,19 @@
             <!-- add table -->
             <table class="center">
                 <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>password</th>
-                    <th>City</th>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>CSE</th>
+                    <th>EEE</th>
+                    <th>PS</th>
+                    <th>SETS</th>
+                    <th>CSE%</th>
+                    <th>EEE%</th>
+                    <th>PS%</th>
+                </tr>
                 </tr>
 
                 <?php

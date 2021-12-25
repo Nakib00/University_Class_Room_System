@@ -31,47 +31,76 @@
         </div>
 
         <!-- Table showing  -->
-        <div class="home-content">
-            <!-- add table -->
-            <table class="center">
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>password</th>
-                    <th>City</th>
-                </tr>
+        <div class="dropdown">
+            <label for="cars">SELECT SEMESTER 1st:</label>
 
-                <?php
+            <select name="cars" id="cars">
+                <option value="volvo">Spring </option>
+                <option value="saab">Summer</option>
+                <option value="mercedes">Autumn</option>
+            </select>
+            <div class="dropdown">
+                <label for="cars">SELECT SEMESTER 2nd:</label>
 
-                //Connect with the database
-                include('DataBase/connection.php');
+                <select name="cars" id="cars">
+                    <option value="saab">Summer</option>
+                    <option value="volvo">Spring </option>
+                    <option value="mercedes">Autumn</option>
+                </select>
+                <div class="home-content">
+                    <!-- add table -->
+                    <table class="center">
+                        <tr>
+                            <th colspan="6">SPRING</th>
+                            <th colspan="6">SUMMER</th>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <th>Enrolment</th>
+                            <th>SBE</th>
+                            <th>SELS</th>
+                            <th>SETS</th>
+                            <th>SLASS</th>
+                            <th>Total</th>
+                            <th>SBE</th>
+                            <th>SELS</th>
+                            <th>SETS</th>
+                            <th>SLASS</th>
+                            <th>Total</th>
+                        </tr>
 
-                if ($conn->connect_errno) {
-                    die("Error connecting" . $conn->connect_error);
-                }
 
-                //USE the SQL query Here
-                $sql = "SELECT users.id, users.username, users.password,addrse.city
+                        <?php
+
+                        //Connect with the database
+                        include('DataBase/connection.php');
+
+                        if ($conn->connect_errno) {
+                            die("Error connecting" . $conn->connect_error);
+                        }
+
+                        //USE the SQL query Here
+                        $sql = "SELECT users.id, users.username, users.password,addrse.city
         FROM users INNER JOIN addrse ON users.id=addrse.id;
         ";
 
-                $result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
-                    }
-                    echo "</table>";
-                } else {
-                    echo "0 result";
-                }
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "0 result";
+                        }
 
-                $conn->close();
+                        $conn->close();
 
-                ?>
+                        ?>
 
-            </table>
-        </div>
+                    </table>
+                </div>
     </section>
 
     <!-- JavaScript add -->
