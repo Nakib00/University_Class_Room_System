@@ -13,6 +13,8 @@
     <?php include('CSS/style.php') ?>
     <!-- Include Table CSS -->
     <?php include('CSS/Table_css.php') ?>
+    <!-- Dropdown CSS  -->
+    <?php include('CSS/dropdown.php') ?>
     <title>TCMS</title>
 </head>
 
@@ -30,77 +32,72 @@
             </div>
         </div>
 
-        <!-- Table showing  -->
-        <div class="dropdown">
-            <label for="cars">SELECT SEMESTER 1st:</label>
-
-            <select name="cars" id="cars">
-                <option value="volvo">Spring </option>
-                <option value="saab">Summer</option>
-                <option value="mercedes">Autumn</option>
-            </select>
+        <!-- Drop down  -->
+        <div class="container">
             <div class="dropdown">
-                <label for="cars">SELECT SEMESTER 2nd:</label>
+                <button class="dropbtn">SEMESTER-YEAR</button>
+                <div class="dropdown-content">
+                    <a href="02_button1.php">Spring-Summer</a>
+                    <a href="02_button2.php">Spring-Autumn</a>
+                    <a href="02_button3.php">summer-Autumn</a>
+                </div>
+            </div>
 
-                <select name="cars" id="cars">
-                    <option value="saab">Summer</option>
-                    <option value="volvo">Spring </option>
-                    <option value="mercedes">Autumn</option>
-                </select>
-                <div class="home-content">
-                    <!-- add table -->
-                    <table class="center">
-                        <tr>
-                            <th colspan="6">SPRING</th>
-                            <th colspan="6">SUMMER</th>
-                        </tr>
-                        <tr>
-                        <tr>
-                            <th>Enrolment</th>
-                            <th>SBE</th>
-                            <th>SELS</th>
-                            <th>SETS</th>
-                            <th>SLASS</th>
-                            <th>Total</th>
-                            <th>SBE</th>
-                            <th>SELS</th>
-                            <th>SETS</th>
-                            <th>SLASS</th>
-                            <th>Total</th>
-                        </tr>
+            <!-- Table showing  -->
+            <div class="home-content">
+                <!-- add table -->
+                <table class="center">
+                    <tr>
+                        <th colspan="6">SPRING</th>
+                        <th colspan="6">SUMMER</th>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <th>Enrolment</th>
+                        <th>SBE</th>
+                        <th>SELS</th>
+                        <th>SETS</th>
+                        <th>SLASS</th>
+                        <th>Total</th>
+                        <th>SBE</th>
+                        <th>SELS</th>
+                        <th>SETS</th>
+                        <th>SLASS</th>
+                        <th>Total</th>
+                    </tr>
 
 
-                        <?php
+                    <?php
 
-                        //Connect with the database
-                        include('DataBase/connection.php');
+                    //Connect with the database
+                    include('DataBase/connection.php');
 
-                        if ($conn->connect_errno) {
-                            die("Error connecting" . $conn->connect_error);
-                        }
+                    if ($conn->connect_errno) {
+                        die("Error connecting" . $conn->connect_error);
+                    }
 
-                        //USE the SQL query Here
-                        $sql = "SELECT users.id, users.username, users.password,addrse.city
+                    //USE the SQL query Here
+                    $sql = "SELECT users.id, users.username, users.password,addrse.city
         FROM users INNER JOIN addrse ON users.id=addrse.id;
         ";
 
-                        $result = $conn->query($sql);
+                    $result = $conn->query($sql);
 
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
-                            }
-                            echo "</table>";
-                        } else {
-                            echo "0 result";
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
                         }
+                        echo "</table>";
+                    } else {
+                        echo "0 result";
+                    }
 
-                        $conn->close();
+                    $conn->close();
 
-                        ?>
+                    ?>
 
-                    </table>
-                </div>
+                </table>
+            </div>
     </section>
 
     <!-- JavaScript add -->

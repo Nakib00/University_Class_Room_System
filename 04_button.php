@@ -87,10 +87,10 @@
                 $seven_slot=$sum_capacity*14;
                 echo"<tr><td>".'<b>Total Capacity with 6 slot 2 days</b>'."</td><td>" ."</td><td>" .$six_slot."</td></tr>";
                 echo"<tr><td>".'<b>Total Capacity with 7 slot 2 days</b>'."</td><td>" ."</td><td>" .$seven_slot."</td></tr>";
-                echo"<tr><td>".'<b>Considering 3.5 average course load (6 slot)</b>'."</td><td>" ."</td><td>" ."</td></tr>";
-                echo"<tr><td>".'<b>Total Capacity withConsidering 3.5 average course load (7 slot)</b>'."</td><td>" ."</td><td>" ."</td></tr>";
-                echo"<tr><td>".'<b>Considering free % for 6 slots capacity</b>'."</td><td>" ."</td><td>" ."</td></tr>";
-                echo"<tr><td>".'<b>Considering free % for 7 slots capacity</b>'."</td><td>" ."</td><td>" ."</td></tr>";
+                // echo"<tr><td>".'<b>Considering 3.5 average course load (6 slot)</b>'."</td><td>" ."</td><td>" ."</td></tr>";
+                // echo"<tr><td>".'<b>Total Capacity withConsidering 3.5 average course load (7 slot)</b>'."</td><td>" ."</td><td>" ."</td></tr>";
+                // echo"<tr><td>".'<b>Considering free % for 6 slots capacity</b>'."</td><td>" ."</td><td>" ."</td></tr>";
+                // echo"<tr><td>".'<b>Considering free % for 7 slots capacity</b>'."</td><td>" ."</td><td>" ."</td></tr>";
 
                 echo "</table>";
                 $conn->close();
