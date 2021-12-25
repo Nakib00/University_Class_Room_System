@@ -13,8 +13,6 @@
     <?php include('CSS/style.php') ?>
     <!-- Include Table CSS -->
     <?php include('CSS/Table_css.php') ?>
-    <!-- Include Chart CSS -->
-    <?php include('CSS/chart.php') ?>
     <!-- Dropdown CSS  -->
     <?php include('CSS/dropdown.php') ?>
 
