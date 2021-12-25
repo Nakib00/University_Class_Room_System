@@ -15,6 +15,8 @@
     <?php include('CSS/Table_css.php') ?>
     <!-- Include Chart CSS -->
     <?php include('CSS/chart.php') ?>
+    <!-- Dropdown CSS  -->
+    <?php include('CSS/dropdown.php') ?>
 
     <title>TCMS</title>
 </head>
@@ -33,143 +35,121 @@
             </div>
         </div>
 
-        <!-- Table showing  -->
-        <div class="dropdown">
-            <label for="cars">SELECT SEMESTER 1st:</label>
-
-            <select name="cars" id="cars">
-                <option value="volvo">Spring </option>
-                <option value="saab">Summer</option>
-                <option value="mercedes">Autumn</option>
-            </select>
+        <!-- Drop down  -->
+        <div class="container">
             <div class="dropdown">
-                <label for="cars">SELECT SEMESTER 2nd:</label>
+                <button class="dropbtn">SEMESTER-YEAR</button>
+                <div class="dropdown-content">
+                    <a href="#">spring(2009)-summer(2009)</a>
+                    <a href="01_button.php">spring(2010)-summer(2010)</a>
+                    <a href="#">spring(2011)-summer(2011)</a>
+                </div>
+            </div>
 
-                <select name="cars" id="cars">
-                    <option value="saab">Summer</option>
-                    <option value="volvo">Spring </option>
-                    <option value="mercedes">Autumn</option>
-                </select>
-                <div class="dropdown">
-                    <label for="cars">SELECT SEMESTER YEAR 1st:</label>
+            <!-- Table Showing -->
+            <div class="home-content">
+                <table class="button_1">
+                    <tr>
+                        <th colspan="4">Spring 2010</th>
+                        <th colspan="4">Summer 2010</th>
+                    </tr>
+                    <tr>
+                        <th>Class Size</th>
+                        <th>Sections</th>
+                        <th>Class room 6</th>
+                        <th>Class room 7</th>
+                        <th>Sections</th>
+                        <th>Class room 6</th>
+                        <th>Class room 7</th>
+                    </tr>
 
-                    <select name="cars" id="cars">
-                        <option value="saab">2010</option>
-                        <option value="volvo">2009 </option>
-                        <option value="mercedes">2011</option>
-                    </select>
-                    <div class="dropdown">
-                        <label for="cars">SELECT SEMESTER YEAR 2nd:</label>
+                    <?php
 
-                        <select name="cars" id="cars">
-                            <option value="saab">2010</option>
-                            <option value="volvo">2009</option>
-                            <option value="mercedes">2011</option>
-                        </select>
-                        <!-- add table -->
-                        <div class="home-content">
-                            <table class="button_1">
-                                <tr>
-                                    <th colspan="4">Spring 2010</th>
-                                    <th colspan="4">Summer 2010</th>
-                                </tr>
-                                <tr>
-                                    <th>Class Size</th>
-                                    <th>Sections</th>
-                                    <th>Class room 6</th>
-                                    <th>Class room 7</th>
-                                    <th>Sections</th>
-                                    <th>Class room 6</th>
-                                    <th>Class room 7</th>
-                                </tr>
+                    //Connect with the database
+                    include('DataBase/connection.php');
 
-                                <?php
+                    if ($conn->connect_errno) {
+                        die("Error connecting" . $conn->connect_error);
+                    }
 
-                                //Connect with the database
-                                include('DataBase/connection.php');
+                    //USE the SQL query Here
+                    $cls_size1 = array(0, 11, 21, 31, 36, 41, 51, 56);
+                    $cls_size2 = array(10, 20, 30, 35, 40, 50, 55, 60);
 
-                                if ($conn->connect_errno) {
-                                    die("Error connecting" . $conn->connect_error);
-                                }
+                    $section_spring = array();
+                    $section_summer = array();
+                    $class_room_6_spring = array();
+                    $class_room_7_spring = array();
+                    $class_room_6_summer = array();
+                    $class_room_7_summer = array();
 
-                                //USE the SQL query Here
-                                $cls_size1 = array(0, 11, 21, 31, 36, 41, 51, 56);
-                                $cls_size2 = array(10, 20, 30, 35, 40, 50, 55, 60);
+                    $section_spring_sum = 0;
+                    $section_summer_sum = 0;
+                    $class_room_6_spring_sum = 0;
+                    $class_room_7_spring_sum = 0;
+                    $class_room_6_summer_sum = 0;
+                    $class_room_7_summer_sum = 0;
 
-                                $section_spring = array();
-                                $section_summer = array();
-                                $class_room_6_spring = array();
-                                $class_room_7_spring = array();
-                                $class_room_6_summer = array();
-                                $class_room_7_summer = array();
-
-                                $section_spring_sum = 0;
-                                $section_summer_sum = 0;
-                                $class_room_6_spring_sum = 0;
-                                $class_room_7_spring_sum = 0;
-                                $class_room_6_summer_sum = 0;
-                                $class_room_7_summer_sum = 0;
-
-                                //For spring
-                                for ($i = 0; $i < count($cls_size1); $i++) {
-                                    //USE the SQL query Here
-                                    $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
+                    //For spring
+                    for ($i = 0; $i < count($cls_size1); $i++) {
+                        //USE the SQL query Here
+                        $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
                     semester_name='spring' AND semester_year='2010' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
-                                    $result = $conn->query($sql);
-                                    if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) {
-                                            $section_spring[] = implode(" ", $row);
-                                        }
-                                    }
-                                }
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $section_spring[] = implode(" ", $row);
+                            }
+                        }
+                    }
 
-                                for ($i = 0; $i < count($section_spring); $i++) {
-                                    $class_room_6_spring[$i] = ($section_spring[$i] / 12);
-                                    $class_room_7_spring[$i] = ($section_spring[$i] / 14);
-                                }
+                    for ($i = 0; $i < count($section_spring); $i++) {
+                        $class_room_6_spring[$i] = ($section_spring[$i] / 12);
+                        $class_room_7_spring[$i] = ($section_spring[$i] / 14);
+                    }
 
-                                //For summer
-                                for ($i = 0; $i < count($cls_size1); $i++) {
-                                    //USE the SQL query Here
-                                    $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
+                    //For summer
+                    for ($i = 0; $i < count($cls_size1); $i++) {
+                        //USE the SQL query Here
+                        $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
                     semester_name='summer' AND semester_year='2010' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
-                                    $result = $conn->query($sql);
-                                    if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) {
-                                            $section_summer[] = implode(" ", $row);
-                                        }
-                                    }
-                                }
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $section_summer[] = implode(" ", $row);
+                            }
+                        }
+                    }
 
-                                for ($i = 0; $i < count($section_summer); $i++) {
-                                    $class_room_6_summe[$i] = ($section_summer[$i] / 12);
-                                    $class_room_7_summe[$i] = ($section_summer[$i] / 14);
-                                }
+                    for ($i = 0; $i < count($section_summer); $i++) {
+                        $class_room_6_summe[$i] = ($section_summer[$i] / 12);
+                        $class_room_7_summe[$i] = ($section_summer[$i] / 14);
+                    }
 
-                                for ($i = 0; $i < count($section_summer); $i++) {
-                                    $section_spring_sum = ($section_spring_sum + $section_spring[$i]);
-                                    $section_summer_sum = ($section_summer_sum + $section_summer[$i]);
-                                    $class_room_6_spring_sum = ($class_room_6_spring_sum + $class_room_6_spring[$i]);
-                                    $class_room_7_spring_sum = ($class_room_7_spring_sum + $class_room_7_spring[$i]);
-                                    $class_room_6_summer_sum = ($class_room_6_summer_sum + $class_room_6_summe[$i]);
-                                    $class_room_7_summer_sum = ($class_room_7_summer_sum + $class_room_7_summe[$i]);
-                                }
+                    for ($i = 0; $i < count($section_summer); $i++) {
+                        $section_spring_sum = ($section_spring_sum + $section_spring[$i]);
+                        $section_summer_sum = ($section_summer_sum + $section_summer[$i]);
+                        $class_room_6_spring_sum = ($class_room_6_spring_sum + $class_room_6_spring[$i]);
+                        $class_room_7_spring_sum = ($class_room_7_spring_sum + $class_room_7_spring[$i]);
+                        $class_room_6_summer_sum = ($class_room_6_summer_sum + $class_room_6_summe[$i]);
+                        $class_room_7_summer_sum = ($class_room_7_summer_sum + $class_room_7_summe[$i]);
+                    }
 
-                                for ($i = 0; $i < count($section_summer); $i++) {
-                                    echo "<tr><td>" . "$cls_size1[$i]" . "-" . "$cls_size2[$i]" . "</td><td>" . $section_spring[$i] . "</td><td>" . round($class_room_6_spring[$i], 2) .
-                                        "</td><td>" . round($class_room_7_spring[$i], 2) . "</td><td>" . round($section_summer[$i], 2) . "</td><td>" . round($class_room_6_summe[$i], 2) .
-                                        "</td><td>" . round($class_room_7_summe[$i], 2) . "</td></tr>";
-                                }
+                    for ($i = 0; $i < count($section_summer); $i++) {
+                        echo "<tr><td>" . "$cls_size1[$i]" . "-" . "$cls_size2[$i]" . "</td><td>" . $section_spring[$i] . "</td><td>" . round($class_room_6_spring[$i], 2) .
+                            "</td><td>" . round($class_room_7_spring[$i], 2) . "</td><td>" . round($section_summer[$i], 2) . "</td><td>" . round($class_room_6_summe[$i], 2) .
+                            "</td><td>" . round($class_room_7_summe[$i], 2) . "</td></tr>";
+                    }
 
-                                echo "<tr><td>" . '<b>TOTAL</b>' . "</td><td>" . $section_spring_sum . "</td><td>" . round($class_room_6_spring_sum, 2) . "</td><td>" .
-                                    round($class_room_7_spring_sum, 2) . "</td><td>" . round($section_summer_sum, 2) . "</td><td>" . round($class_room_6_summer_sum, 2) . "</td><td>" .
-                                    round($class_room_7_summer_sum, 2) . "</td></tr>";
+                    echo "<tr><td>" . '<b>TOTAL</b>' . "</td><td>" . $section_spring_sum . "</td><td>" . round($class_room_6_spring_sum, 2) . "</td><td>" .
+                        round($class_room_7_spring_sum, 2) . "</td><td>" . round($section_summer_sum, 2) . "</td><td>" . round($class_room_6_summer_sum, 2) . "</td><td>" .
+                        round($class_room_7_summer_sum, 2) . "</td></tr>";
 
-                                $conn->close();
-                                ?>
+                    $conn->close();
+                    ?>
 
-                            </table>
-                        </div>
+                </table>
+            </div>
     </section>
 
     <!-- JavaScript add -->
