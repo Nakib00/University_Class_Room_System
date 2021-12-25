@@ -51,9 +51,9 @@
                         <tr>
                             <th>Class size</th>
                             <th>IUB Resources</th>
-                            <th>Spring 2009</th>
+                            <th>Spring 2011</th>
                             <th>Differance</th>
-                            <th>Summer 2009</th>
+                            <th>Summer 2011</th>
                             <th>Difference</th>
                             <th></th>
                         </tr>
@@ -102,7 +102,7 @@
 
                         for ($i = 0; $i < count($class_sizes); $i++) {
                             $sql = "SELECT COUNT(*) FROM classroom_t AS c, section_t AS s WHERE c.room_id=s.room_id AND
-                        semester_name='spring' AND semester_year='2009' AND roomcapacity=$class_sizes[$i];";
+                        semester_name='spring' AND semester_year='2011' AND roomcapacity=$class_sizes[$i];";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
@@ -115,7 +115,7 @@
                         for ($i = 0; $i < count($cls_size1); $i++) {
                             //USE the SQL query Here
                             $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
-                        semester_name='spring' AND semester_year='2009' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
+                        semester_name='spring' AND semester_year='2011' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
@@ -128,7 +128,7 @@
                         for ($i = 0; $i < count($cls_size1); $i++) {
                             //USE the SQL query Here
                             $sql = "SELECT COUNT(*) FROM section_t AS s, classroom_t AS c WHERE s.room_id=c.room_id AND
-                        semester_name='summer' AND semester_year='2009' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
+                        semester_name='summer' AND semester_year='2010' AND roomcapacity BETWEEN $cls_size1[$i] AND $cls_size2[$i];";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
