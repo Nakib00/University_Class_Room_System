@@ -452,8 +452,5 @@
     -webkit-transform: scale(1.0, 1.0);
     transform: scale(1.0, 1.0);
   }
-  .dropdown{
-    left:30px;
-    top:20px;
-  }
+  
 </style>
