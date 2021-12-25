@@ -57,10 +57,20 @@
         width: 2%;
         left: 20%;
     }
-    .button5{
-        width:20%;
+
+    .button5 {
+        width: 20%;
     }
-    .button6{
-        width:20%;
+
+    .button6 {
+        width: 20%;
+    }
+
+    .button7 {
+        width: 20%;
+    }
+
+    .button8 {
+        width: 20%;
     }
 </style>

@@ -33,7 +33,7 @@
         <!-- Table showing  -->
         <div class="home-content">
             <!-- add table -->
-            <table class="center">
+            <table class="button8">
                 <tr>
                 <tr>
                     <th></th>
