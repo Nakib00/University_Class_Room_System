@@ -54,13 +54,13 @@
     }
 
     .button2 {
-        width: 20%;
-        left: 5%;
+        width: 2%;
+        left: 12.5%;
     }
 
     .button21 {
-        width: 40%;
-        left: 47%;
+        width: 2%;
+        left: 55%;
     }
     .button5{
         width:20%;

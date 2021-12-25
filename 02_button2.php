@@ -124,7 +124,7 @@
                 </table>
                 <table class="button21">
                     <tr>
-                        <th colspan="6">SUMMER</th>
+                        <th colspan="6">AUTUMN</th>
                         <th></th>
                     </tr>
                     <tr>
@@ -148,7 +148,7 @@
 
                         // //SUMMER
                         for ($l = 0; $l < count($school_name); $l++) {
-                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$l]' AND semester_name='summer' AND semester_year='2010' AND
+                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$l]' AND semester_name='autumn' AND semester_year='2010' AND
                             std_enrolled BETWEEN '$enrolled_size1[$l]' AND '$enrolled_size2[$l]';";
                             $results2 = $conn->query($sql2);
                             if ($results->num_rows > 0) {

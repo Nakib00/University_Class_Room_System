@@ -48,7 +48,7 @@
                 <!-- add table -->
                 <table class="button2">
                     <tr>
-                        <th colspan="6">SPRING</th>
+                        <th colspan="6">SUMMER</th>
                     </tr>
                     <tr>
                         <th>Enrolment</th>
@@ -86,7 +86,7 @@
                     for ($i = 0; $i < count($enrolled_size1); $i++) {
                         //SPRING
                         for ($j = 0; $j < count($school_name); $j++) {
-                            $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$j]' AND semester_name='spring' AND semester_year='2010' AND
+                            $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$j]' AND semester_name='summer' AND semester_year='2010' AND
                             std_enrolled BETWEEN $enrolled_size1[$i] AND $enrolled_size2[$i];";
                             $results = $conn->query($sql);
                             if ($results->num_rows > 0) {
@@ -124,7 +124,7 @@
                 </table>
                 <table class="button21">
                     <tr>
-                        <th colspan="6">SUMMER</th>
+                        <th colspan="6">AUTUMN</th>
                         <th></th>
                     </tr>
                     <tr>
@@ -148,7 +148,7 @@
 
                         // //SUMMER
                         for ($l = 0; $l < count($school_name); $l++) {
-                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$l]' AND semester_name='summer' AND semester_year='2010' AND
+                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title='$school_name[$l]' AND semester_name='autumn' AND semester_year='2010' AND
                             std_enrolled BETWEEN '$enrolled_size1[$l]' AND '$enrolled_size2[$l]';";
                             $results2 = $conn->query($sql2);
                             if ($results->num_rows > 0) {

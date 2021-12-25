@@ -30,39 +30,18 @@
             </div>
         </div>
 
+                <!-- Drop down  -->
+                <div class="container">
+            <div class="dropdown">
+                <button class="dropbtn">SEMESTER-YEAR</button>
+                <div class="dropdown-content">
+                    <a href="01_button1.php">spring(2009)-summer(2009)</a>
+                    <a href="01_button2.php">spring(2010)-summer(2010)</a>
+                    <a href="01_button3.php">spring(2011)-summer(2011)</a>
+                </div>
+            </div>
+
         <!-- Table showing  -->
-        <div class="dropdown">
-            <label for="cars">SELECT SEMESTER 1st:</label>
-
-            <select name="cars" id="cars">
-                <option value="volvo">Spring </option>
-                <option value="saab">Summer</option>
-                <option value="mercedes">Autumn</option>
-            </select>
-            <div class="dropdown">
-            <label for="cars">SELECT SEMESTER 2nd:</label>
-
-            <select name="cars" id="cars">
-                <option value="saab">Summer</option>
-                <option value="volvo">Spring </option>
-                <option value="mercedes">Autumn</option>
-            </select>
-            <div class="dropdown">
-            <label for="cars">SELECT SEMESTER YEAR 1st:</label>
-
-            <select name="cars" id="cars">
-                <option value="saab">2010</option>
-                <option value="volvo">2009 </option>
-                <option value="mercedes">2011</option>
-            </select>
-            <div class="dropdown">
-            <label for="cars">SELECT SEMESTER YEAR 2nd:</label>
-
-            <select name="cars" id="cars">
-                <option value="saab">2010</option>
-                <option value="volvo">2009</option>
-                <option value="mercedes">2011</option>
-            </select>
         <div class="home-content">
             <div>
                 <!-- add table -->
@@ -94,29 +73,29 @@
                     // sum of room capacity
                     // SELECT SUM(roomcapacity) AS sum_room_capacity  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='SBE' AND semester_name='spring';
 
-                    $class_sizes=array(15,20,25,30,35,40,45,50,60,65);
+                    $class_sizes = array(15, 20, 25, 30, 35, 40, 45, 50, 60, 65);
 
                     $cls_size1 = array(1, 16, 21, 26, 31, 36, 41, 46, 51, 61);
                     $cls_size2 = array(15, 20, 25, 30, 35, 40, 45, 50, 60, 65);
 
-                    $occarence=array();
-                    $needed_spring=array();
-                    $div_six_spring=array();
-                    $diff_spring=array();
-                    $needed_summer=array();
-                    $div_six_summer=array();
-                    $diff_summer=array();
-                    $occarence_sum=array();
-                    $spring_sum=array();
-                    $diff_spring_sum=array();
-                    $summer_sum=array();
-                    $diff_summer_sum=array();
+                    $occarence = array();
+                    $needed_spring = array();
+                    $div_six_spring = array();
+                    $diff_spring = array();
+                    $needed_summer = array();
+                    $div_six_summer = array();
+                    $diff_summer = array();
+                    $occarence_sum = array();
+                    $spring_sum = array();
+                    $diff_spring_sum = array();
+                    $summer_sum = array();
+                    $diff_summer_sum = array();
 
-                    $resource_sum=0;
-                    $required_sum_spring=0;
-                    $diff_sum_spring=0;
-                    $required_sum_summer=0;
-                    $diff_sum_summer=0;
+                    $resource_sum = 0;
+                    $required_sum_spring = 0;
+                    $diff_sum_spring = 0;
+                    $required_sum_summer = 0;
+                    $diff_sum_summer = 0;
 
 
                     for ($i = 0; $i < count($class_sizes); $i++) {
@@ -157,16 +136,16 @@
                     }
 
 
-                    for($i = 0; $i < count($needed_spring); $i++){
-                        $div_six_spring[$i] = ($needed_spring[$i]/12);
-                        $div_six_summer[$i] = ($needed_summer[$i]/12);
+                    for ($i = 0; $i < count($needed_spring); $i++) {
+                        $div_six_spring[$i] = ($needed_spring[$i] / 12);
+                        $div_six_summer[$i] = ($needed_summer[$i] / 12);
                     }
 
-                    for($i = 0; $i < count($needed_spring); $i++){
+                    for ($i = 0; $i < count($needed_spring); $i++) {
                         $diff_spring[$i] = $occarence[$i] - $div_six_spring[$i];
                         $diff_summer[$i] = $occarence[$i] - $div_six_summer[$i];
                     }
-                    
+
 
                     for ($i = 0; $i < count($class_sizes); $i++) {
                         echo "<tr><td>" . $class_sizes[$i] . "</td><td>" . $occarence[$i] . "</td><td>" .
@@ -179,7 +158,7 @@
                         $required_sum_spring = $required_sum_spring + $div_six_spring[$i];
                         $diff_sum_spring = $diff_sum_spring + $diff_spring[$i];
                         $required_sum_summer = $required_sum_summer + $div_six_summer[$i];
-                        $diff_sum_summer = $diff_sum_summer + $diff_summer[$i];        
+                        $diff_sum_summer = $diff_sum_summer + $diff_summer[$i];
                     }
 
                     echo "<tr><td>" . '<b>Total</b>' . "</td><td>" . $resource_sum . "</td><td>" . round($required_sum_spring, 2) . "</td><td>" .
