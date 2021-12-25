@@ -55,12 +55,7 @@
 
     .button2 {
         width: 2%;
-        left: 12.5%;
-    }
-
-    .button21 {
-        width: 2%;
-        left: 55%;
+        left: 20%;
     }
     .button5{
         width:20%;
