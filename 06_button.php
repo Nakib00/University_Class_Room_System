@@ -37,9 +37,9 @@
             <div class="dropdown">
                 <button class="dropbtn">SEMESTER-YEAR</button>
                 <div class="dropdown-content">
-                    <a href="02_button1.php">Spring-Summer</a>
-                    <a href="02_button2.php">Spring-Autumn</a>
-                    <a href="02_button3.php">summer-Autumn</a>
+                    <a href="06_button1.php">Spring-Summer</a>
+                    <a href="06_button2.php">Spring-Autumn</a>
+                    <a href="06_button3.php">summer-Autumn</a>
                 </div>
             </div>
 
