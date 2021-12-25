@@ -40,7 +40,7 @@
 
     .button_3 {
         top: 680;
-        left: 22%;
+        left: 20%;
     }
 
     .button4 {
@@ -49,8 +49,8 @@
     }
 
     .button_1 {
-        width: 20%;
-        left: 25%;
+        width: 40%;
+        left: 20%;
     }
 
     .button2 {
@@ -58,6 +58,9 @@
         left: 20%;
     }
     .button5{
+        width:20%;
+    }
+    .button6{
         width:20%;
     }
 </style>

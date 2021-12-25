@@ -46,7 +46,7 @@
             <!-- Table showing  -->
             <div class="home-content">
                 <!-- add table -->
-                <table class="center">
+                <table class="button6">
                     <tr>
                         <th colspan="6">SPRING 2009</th>
                         <th colspan="6">SUMMER 2009</th>
