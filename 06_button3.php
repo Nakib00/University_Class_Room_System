@@ -48,8 +48,8 @@
                 <!-- add table -->
                 <table class="center">
                     <tr>
-                        <th colspan="6">SPRING 2009</th>
-                        <th colspan="6">SUMMER 2009</th>
+                        <th colspan="6">SPRING 2011</th>
+                        <th colspan="6">SUMMER 2011</th>
                     </tr>
                     <tr>
                     <tr>
@@ -87,7 +87,7 @@
                     for ($i = 1; $i <= 60; $i++) {
                         //SPRING
                         for ($j = 0; $j < 4; $j++) {
-                            $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$j]' AND semester_name='spring' AND semester_year='2009' AND std_enrolled ='$i';";
+                            $sql = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$j]' AND semester_name='spring' AND semester_year='2011' AND std_enrolled ='$i';";
                             $results = $conn->query($sql);
                             if ($results->num_rows > 0) {
                                 while ($row = $results->fetch_assoc()) {
@@ -97,7 +97,7 @@
                         }
                         // //SUMMER
                         for ($l = 0; $l < 4; $l++) {
-                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$l]' AND semester_name='summer' AND semester_year='2009' AND std_enrolled ='$i';";
+                            $sql2 = "SELECT COUNT(*) FROM section_t WHERE school_title= '$school_name[$l]' AND semester_name='summer' AND semester_year='2011' AND std_enrolled ='$i';";
                             $results2 = $conn->query($sql2);
                             if ($results->num_rows > 0) {
                                 while ($row = $results2->fetch_assoc()) {
