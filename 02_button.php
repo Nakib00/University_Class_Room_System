@@ -37,7 +37,7 @@
             <div class="dropdown">
                 <button class="dropbtn">SEMESTER-YEAR</button>
                 <div class="dropdown-content">
-                    <a href="02_button1.php">Spring(2009)-Summer(2009)</a>
+                    <a href="02_button.php">Spring(2009)-Summer(2009)</a>
                     <a href="02_button2.php">Spring(2010)-Autumn(2010)</a>
                     <a href="02_button3.php">summer(2011)-Autumn(2011)</a>
                 </div>
