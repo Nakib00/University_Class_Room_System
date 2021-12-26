@@ -62,7 +62,39 @@ Database-integration: MySQL</br>
 **ADDITIONAL FEATURE AND FUTURE DEVELOPMENT**</br>
 Future Developing Purposes:</br>
 1.•	Add feature to automatically generate optimal classroom allocation based on number of students enrolled in a particular course for a particular semester.</br>
-2.•	Deployment.</br>
+2.•	Deployment.</br></br></br>
+
+**Project website overview**</br>
+**index page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/1.PNG?raw=true)
+
+
+**Login page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/2.PNG?raw=true)
+
+
+**Registration page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/3.PNG?raw=true)
+
+
+**Dashboard welcome page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/4.PNG?raw=true)
+
+
+**CSV file import page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/5.PNG?raw=true)
+
+
+**Uses of Resources Comparison page**
+
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/6.PNG?raw=true)
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/7.PNG?raw=true)
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/8.PNG?raw=true)
 
 
 
