@@ -24,6 +24,7 @@ In the existing system all the data that is required for making meaningful analy
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/business%20system%20with%20rich%20picture.PNG?raw=true)
 
 **BUSINESS PROCESS** 
+
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/process%20diagram.PNG?raw=true)
 
 **BUSINESS-RULES**
@@ -38,6 +39,7 @@ A Classroom may be allocated for many sections. A Section is allocated in exactl
 **ENTITY-RELATIONSHIP DIAGRAM (ERD)**
 
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/RED.png?raw=true)
+
 
 **RELATIONAL SCHEMA**
 
