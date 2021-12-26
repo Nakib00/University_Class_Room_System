@@ -45,24 +45,24 @@ A Classroom may be allocated for many sections. A Section is allocated in exactl
 
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Relational%20schema%20diagram.png?raw=true)
 
-**PROBLEM AND SOLUTION**
+**PROBLEM AND SOLUTION**</br>
 
-Analysis Phase 
+Analysis Phase</br> 
 During the analysis phase conceptualization was made on how to improve the existing system. While working on the Rich Picture and Six Element Analysis of operations of the organization, simultaneously, assumptions for the queries required to make the project were made. Interviews with faculty members and senior students were done for better understating of the project. 
 
-Designing Phase 
+Designing Phase</br> 
 Upon further research all entities related the project were created and the relation between all entities were defined. which was also introduced in the Relational Schema schematic. Feedback from course instructor also played a very valid and crucial role in this phase. 
 
-Implementation Phase 
-All software requirements were reached. Deliverables 1,2,3,4 and 5 were achieved. 
+Implementation Phase</br> 
+All software requirements were reached. Deliverables 1,2,3,4 and 5 were achieved.</br> 
 Front-End Developing tools: HTML, CSS, Bootstrap JavaScript 
-Back End Developing tools: Raw PHP 
-Database-integration: MySQL
+Back End Developing tools: Raw PHP</br> 
+Database-integration: MySQL</br>
 
-**ADDITIONAL FEATURE AND FUTURE DEVELOPMENT**
-Future Developing Purposes:<br>
-1.•	Add feature to automatically generate optimal classroom allocation based on number of students enrolled in a particular course for a particular semester. 
-2.•	Deployment.
+**ADDITIONAL FEATURE AND FUTURE DEVELOPMENT**</br>
+Future Developing Purposes:</br>
+1.•	Add feature to automatically generate optimal classroom allocation based on number of students enrolled in a particular course for a particular semester.</br>
+2.•	Deployment.</br>
 
 
 
