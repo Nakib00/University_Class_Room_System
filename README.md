@@ -60,7 +60,7 @@ Back End Developing tools: Raw PHP
 Database-integration: MySQL
 
 **ADDITIONAL FEATURE AND FUTURE DEVELOPMENT**
-Future Developing Purposes:
+Future Developing Purposes:<br>
 1.•	Add feature to automatically generate optimal classroom allocation based on number of students enrolled in a particular course for a particular semester. 
 2.•	Deployment.
 
