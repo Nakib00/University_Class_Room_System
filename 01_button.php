@@ -36,15 +36,15 @@
         <!-- semister_select  -->
         <div class="container">
             <div class="semister_select">
-            <form class="form-horizontal" action="01_button2.php" method="get">
-                <h3>Input Semister For Comparison</h3>
-                <p>First Semister</p>
-                <input type="text" placeholder="SEMISTER" name="semister1" id="semister1" required>
-                <input type="text" placeholder="YEAR" name="semister_year1" id="semister_year1" required><br>
-                <p>Second Semister</p>
-                <input type="text" placeholder="SEMISTER" name="semister2" id="semister1" required>
-                <input type="text" placeholder="YEAR" name="semister_year2" id="semister_year1" required><br>
-                <button type="submit" class="submit_button">Submit</button>
+                <form class="form-horizontal" action="01_button2.php" method="get">
+                    <h3>Input Semister For Comparison</h3>
+                    <p>First Semister</p>
+                    <input type="text" placeholder="SEMISTER" name="semister1" id="semister1" required>
+                    <input type="text" placeholder="YEAR" name="semister_year1" id="semister_year1" required><br>
+                    <p>Second Semister</p>
+                    <input type="text" placeholder="SEMISTER" name="semister2" id="semister1" required>
+                    <input type="text" placeholder="YEAR" name="semister_year2" id="semister_year1" required><br>
+                    <button type="submit" class="submit_button">Submit</button>
                 </form>
             </div>
         </div>
@@ -52,28 +52,26 @@
         <!-- Table Showing -->
         <div class="home-content">
             <table class="button_1">
+                <tr>
+                    <th></th>
+                    <th>Spring 2009</th>
+                    <th></th>
+                    <th></th>
+                    <th>summer 2009</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Class Size</th>
+                    <th>Sections</th>
+                    <th>Class room 6</th>
+                    <th>Class room 7</th>
+                    <th>Sections</th>
+                    <th>Class room 6</th>
+                    <th>Class room 7</th>
+                </tr>
+
                 <?php
-
-                $semister1 ="Spring";
-                $semister2 ="summer";
-                $semister_year1="2009";
-                $semister_year2="2009";
-
-
-                echo "<tr><th></th>
-                        <th >" . "$semister1" ." ". "$semister_year1". "</th><th></th><th></th>
-                        <th >" . "$semister2" ." ". "$semister_year2"."</th><th></th><th></th>
-                    </tr>
-                    <tr>
-                        <th>Class Size</th>
-                        <th>Sections</th>
-                        <th>Class room 6</th>
-                        <th>Class room 7</th>
-                        <th>Sections</th>
-                        <th>Class room 6</th>
-                        <th>Class room 7</th>
-                    </tr>";
-
 
                 //Connect with the database
                 include('DataBase/connection.php');

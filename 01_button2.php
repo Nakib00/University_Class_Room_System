@@ -39,12 +39,6 @@
             <table class="button_1">
                 <?php
 
-                $semister1 = "Spring";
-                $semister2 = "summer";
-                $semister_year1 = "2009";
-                $semister_year2 = "2009";
-
-
                 // Data get from form 
                 $semister1 = $_GET["semister1"];
                 $semister2 = $_GET["semister2"];
