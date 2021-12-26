@@ -18,7 +18,7 @@ The main purpose of creating this system is to reduce the amount of work and mak
 SCOPE OF THE PROJECT
 
 In the existing system all the data that is required for making meaningful analysis of concerns such as Resource Usage or Classroom Requirements among other topics for each semester is done manually. For each type of data employees have to tediously reach out to different offices and departments and then use those data to make necessary calculations by hand.All this inconvenience can be avoided by implementing a centralized database from which all the required data can be downloaded at once in the form of tally sheets. The tally sheets can then be uploaded into a system that can extract all the data from it and make required calculations using those data to automatically generate meaningful tables and graphs as per user requirements.
-![image](https://user-images.githubusercontent.com/67865591/147415314-4082623b-71af-4abb-a309-07096ede3974.png)
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/business%20system%20with%20rich%20picture.PNG?raw=true)
 
 
 
