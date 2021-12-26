@@ -37,9 +37,9 @@
             <div class="dropdown">
                 <button class="dropbtn">SEMESTER-YEAR</button>
                 <div class="dropdown-content">
-                    <a href="03_button1.php">Spring-Summer</a>
-                    <a href="03_button2.php">Spring-Autumn</a>
-                    <a href="03_button3.php">summer-Autumn</a>
+                    <a href="03_button.php">Spring-Summer</a>
+                    <a href="03_button1.php">Spring-Autumn</a>
+                    <a href="03_button2.php">summer-Autumn</a>
                 </div>
             </div>
             <!-- Table showing  -->
@@ -85,7 +85,7 @@
 
                         for ($i = 0; $i < count($school_name); $i++) {
                             //sum of enrolled students
-                            $sql = "SELECT  SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='spring';";
+                            $sql = "SELECT  SUM(std_enrolled) AS total_enrolled  FROM `section_t` WHERE school_title = '$school_name[$i]' AND semester_name ='summer';";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
@@ -94,7 +94,7 @@
                             }
 
                             //number of rows that have school
-                            $sql2 = "SELECT COUNT(*) FROM `section_t` WHERE school_title='$school_name[$i]' AND semester_name='spring';";
+                            $sql2 = "SELECT COUNT(*) FROM `section_t` WHERE school_title='$school_name[$i]' AND semester_name='summer';";
                             $result2 = $conn->query($sql2);
                             if ($result->num_rows > 0) {
                                 while ($row = $result2->fetch_assoc()) {
@@ -102,7 +102,7 @@
                                 }
                             }
                             //sum of room capacity
-                            $sql3 = "SELECT SUM(roomcapacity)  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='$school_name[$i]' AND semester_name='spring';";
+                            $sql3 = "SELECT SUM(roomcapacity)  FROM `section_t` AS s, classroom_t As c WHERE s.room_id=c.room_id AND school_title='$school_name[$i]' AND semester_name='summer';";
                             $result3 = $conn->query($sql3);
                             if ($result->num_rows > 0) {
                                 while ($row = $result3->fetch_assoc()) {
@@ -125,7 +125,7 @@
                             $sum_deef = ($sum_deef + ($sum_room_capacity[$i] / $row_need[$i]) - ($total_enrolled[$i] / $row_need[$i]));
                             $sum_unused = ($sum_unused + ((($sum_room_capacity[$i] / $row_need[$i]) - ($total_enrolled[$i] / $row_need[$i])) / ($sum_room_capacity[$i] / $row_need[$i]) * 100));
                         }
-                        echo "<tr><td>" . '<b>SPRING</b>' . "</td><td>" . $sum_total_enrolled . "</td><td>" . round($sum_avg_enrolled, 2) . "</td><td>" .
+                        echo "<tr><td>" . '<b>SUMMER</b>' . "</td><td>" . $sum_total_enrolled . "</td><td>" . round($sum_avg_enrolled, 2) . "</td><td>" .
                             round($sum_avg_room, 2) . "</td><td>" . round($sum_deef, 2) . "</td><td>" . round($sum_unused, 2) . "</td><td></tr>";
 
                         //SUMMER TABLE
@@ -173,7 +173,7 @@
                                 "</td><td>" . round((((($sum_room_capacity2[$i] / $row_need2[$i]) - ($total_enrolled2[$i] / $row_need2[$i])) / ($sum_room_capacity2[$i] / $row_need2[$i]) * 100)), 2) . "</td></tr>";
                         }
 
-                        // sum of all spring and autumn
+                        // sum of all spring and summer
                         for ($i = 0; $i < count($row_need2); $i++) {
                             $sum_total_enrolled2 = ($sum_total_enrolled2 + $total_enrolled2[$i]);
                             $sum_avg_enrolled2 = ($sum_avg_enrolled2 + ($total_enrolled2[$i] / $row_need2[$i]));
@@ -192,7 +192,7 @@
                     <table class="button_3">
                         <tr>
                             <th></th>
-                            <th>SPRING</th>
+                            <th>SUMMER</th>
                             <th></th>
                             <th>AUTUMN</th>
                             <th></th>
