@@ -56,22 +56,6 @@
                     die("Error connecting" . $conn->connect_error);
                 }
 
-                //USE the SQL query Here
-                $sql = "SELECT users.id, users.username, users.password,addrse.city
-        FROM users INNER JOIN addrse ON users.id=addrse.id;
-        ";
-
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row['id'] . "</td><td>" . $row['username'] . "</td><td>" . $row['password'] . "</td><td>" . $row['city'] . "</td></tr>";
-                    }
-                    echo "</table>";
-                } else {
-                    echo "0 result";
-                }
-
                 $conn->close();
 
                 ?>
