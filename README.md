@@ -44,12 +44,7 @@ A Classroom may be allocated for many sections. A Section is allocated in exactl
 **RELATIONAL SCHEMA**
 
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Relational%20schema%20diagram.png?raw=true)
-</br></br></br>
-
-**NORMALIZATION**</br>
-|CLASSROOM|RoomId|r1|
-||RoomCapacity|r2|
-
+</br>
 
 </br></br>
 **PROBLEM AND SOLUTION**</br>
