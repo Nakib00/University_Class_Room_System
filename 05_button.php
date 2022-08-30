@@ -13,6 +13,7 @@
 
     <!-- Include CSS  -->
     <?php include('CSS/style.php') ?>
+    <?php include('CSS/graph.php') ?>
     <!-- Include Table CSS -->
     <?php include('CSS/Table_css.php') ?>
     <!-- Dropdown CSS  -->
@@ -181,9 +182,50 @@
             </div>
     </section>
 
+    <!-- Graph -->
+    <section class="Graph5">
+        <div id="chart_div" style="width: 800px; height: 500px;"></div>
+    </section>
+
     <!-- JavaScript add -->
     <?php include('javascript/javascript.php') ?>
 
 </body>
+<!-- Graph -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['bar']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Class Size', 'IUB Resource', 'Summer', 'Spring'],
+            <?php
+            for ($i = 0; $i < count($class_sizes); $i++){
+                echo "['".$class_sizes[$i]."',".$occarence[$i].",".round($div_six_spring[$i], 2).",".round($div_six_summer[$i], 2)."],";
+            }
+            ?>
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Resource Utilization in summer and spring',
+                // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            },
+            bars: 'vertical',
+            vAxis: {
+                format: 'decimal'
+            },
+            height: 400,
+            colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+</script>
 
 </html>

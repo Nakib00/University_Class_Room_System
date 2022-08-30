@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Include CSS  -->
     <?php include('CSS/style.php') ?>
+    <?php include('CSS/graph.php') ?>
     <!-- Include Table CSS -->
     <?php include('CSS/Table_css.php') ?>
     <!-- Dropdown CSS  -->
