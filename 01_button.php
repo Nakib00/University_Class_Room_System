@@ -160,9 +160,42 @@
         </div>
     </section>
 
+    <!-- PieChart SUMMER 2009 CLASS SIZE 6-->
+    <section class="Graph">
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </section>
+
     <!-- JavaScript add -->
     <?php include('javascript/javascript.php') ?>
-
 </body>
+
+<!-- PieChart SUMMER 2009 CLASS SIZE 6 -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            <?php
+            for ($i = 0; $i < count($section_summer); $i++) {
+                echo "['" . "$cls_size1[$i]" . "-" . "$cls_size2[$i]" . "'," . round($class_room_6_summe[$i], 2) . "],";
+            }
+            ?>
+        ]);
+
+        var options = {
+            title: 'CLASS ROOM 6 SUMMER 2009'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+    }
+</script>
 
 </html>

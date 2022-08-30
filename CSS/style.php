@@ -97,6 +97,14 @@
     transition: all 0.5s ease;
   }
 
+  .Graph{
+    position: relative;
+    min-height: 100vh;
+    width: calc(100% - 240px);
+    left: 240px;
+    top: 350px;
+    transition: all 0.5s ease;
+  }
   .sidebar.active~.home-section {
     width: calc(100% - 60px);
     left: 60px;
