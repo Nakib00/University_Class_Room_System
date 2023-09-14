@@ -97,6 +97,7 @@ Future Developing Purposes:</br>
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/6.PNG?raw=true)
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/7.PNG?raw=true)
 ![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Repost%20File/Websit%20overview/8.PNG?raw=true)
+![alt text](https://github.com/Nakib00/University_Analysis_System/blob/main/Output%20Charts/chart%20data.PNG?raw=true)
 
 
 
